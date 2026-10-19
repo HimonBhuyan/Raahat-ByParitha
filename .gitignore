@@ -1,0 +1,8 @@
+# Ignore compiled blade templates
+cache/*.php
+!cache/.gitkeep
+
+# OS generated files
+.DS_Store
+Thumbs.db
+*.log

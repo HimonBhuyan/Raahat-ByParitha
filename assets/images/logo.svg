@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 120" width="100%" height="100%">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F7E2A2"/>
+      <stop offset="35%" stop-color="#D4AF37"/>
+      <stop offset="70%" stop-color="#AA771C"/>
+      <stop offset="100%" stop-color="#E5C158"/>
+    </linearGradient>
+    <filter id="goldGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#D4AF37" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <!-- Monogram: Stylized R with Shears -->
+  <g transform="translate(15, 10)">
+    <!-- Outer Shield / Regal Frame -->
+    <circle cx="50" cy="50" r="46" fill="none" stroke="url(#goldGrad)" stroke-width="1.5" stroke-dasharray="3,3" opacity="0.6"/>
+    <circle cx="50" cy="50" r="42" fill="#090E1A" stroke="url(#goldGrad)" stroke-width="1.2"/>
+    
+    <!-- Stylized R with Shears incorporated -->
+    <path d="M36 28 L48 28 C56 28 62 33 62 40 C62 46 57 51 50 52 L64 72 L54 72 L42 53 L42 72 L36 72 Z M42 34 L42 47 L48 47 C52 47 55 44 55 40.5 C55 37 52 34 48 34 Z" fill="url(#goldGrad)" filter="url(#goldGlow)"/>
+    
+    <!-- Shears pivot & blades accent -->
+    <circle cx="61" cy="67" r="2.5" fill="none" stroke="url(#goldGrad)" stroke-width="1.2"/>
+    <path d="M59 66 L68 74 M63 68 L69 64" stroke="url(#goldGrad)" stroke-width="1.2" stroke-linecap="round"/>
+  </g>
+
+  <!-- Typography -->
+  <g transform="translate(130, 22)">
+    <!-- Brand Name -->
+    <text x="0" y="38" font-family="'Cinzel', 'Playfair Display', 'Cormorant Garamond', serif" font-size="34" font-weight="600" letter-spacing="9" fill="url(#goldGrad)">RAAHAT</text>
+    
+    <!-- Subtitle -->
+    <text x="3" y="60" font-family="'Plus Jakarta Sans', 'Montserrat', sans-serif" font-size="11" font-weight="400" letter-spacing="6" fill="#E6D3A3">BY PARITHA</text>
+    
+    <!-- Tagline & Locations -->
+    <line x1="3" y1="72" x2="280" y2="72" stroke="url(#goldGrad)" stroke-width="0.8" opacity="0.4"/>
+    <text x="3" y="85" font-family="'Plus Jakarta Sans', 'Montserrat', sans-serif" font-size="8.5" font-weight="300" letter-spacing="4" fill="#B3B9C5">CHENNAI  •  BANGALORE</text>
+  </g>
+</svg>

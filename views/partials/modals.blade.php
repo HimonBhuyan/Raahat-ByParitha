@@ -1,0 +1,151 @@
+<!-- VIP Atelier Booking Modal -->
+<div class="modal-backdrop" id="bookingModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="modal-brand-badge">VIP ATELIER CONCIERGE</div>
+        <button class="modal-close-btn" id="closeBookingModal" aria-label="Close modal">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="modal-intro">
+          <h3 class="modal-title">Schedule A Private Consultation</h3>
+          <p class="modal-subtitle">
+            Meet with Creative Director Pari Agarwal and our master tailors at our Chennai or Bangalore ateliers, or arrange a private virtual consultation.
+          </p>
+        </div>
+
+        <form id="appointmentForm" class="appointment-form">
+          <input type="hidden" name="product" id="bookingProductInput" value="">
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label for="clientName">Full Name *</label>
+              <input type="text" id="clientName" name="name" class="form-control" placeholder="e.g. Aditya Verma" required>
+            </div>
+            <div class="form-group">
+              <label for="clientPhone">WhatsApp / Mobile Number *</label>
+              <input type="tel" id="clientPhone" name="phone" class="form-control" placeholder="+91 98765 43210" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="clientCity">Preferred Atelier Location *</label>
+              <select id="clientCity" name="city" class="form-control" required>
+                <option value="Chennai — Nungambakkam Atelier">Chennai — Nungambakkam (Amethyst)</option>
+                <option value="Bangalore — Indiranagar Studio">Bangalore — Indiranagar Studio</option>
+                <option value="Virtual Video Consultation (NRI / Destination)">Virtual Video Consultation (NRI / Destination)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="clientOccasion">Occasion / Garment Category *</label>
+              <select id="clientOccasion" name="occasion" class="form-control" required>
+                <option value="Wedding Groom Muhurtham & Sherwani">Wedding Groom Muhurtham & Sherwani</option>
+                <option value="Bespoke Embellished Tuxedo (Sangeet / Reception)">Bespoke Embellished Tuxedo (Sangeet / Reception)</option>
+                <option value="South Indian Pure Silk Zari Attire">South Indian Pure Silk Zari Attire</option>
+                <option value="Contemporary Indo-Western Silhouette">Contemporary Indo-Western Silhouette</option>
+                <option value="Full Groom Trousseau (Complete Wardrobe)">Full Groom Trousseau (Complete Wardrobe)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="clientDate">Preferred Consultation Date</label>
+              <input type="date" id="clientDate" name="date" class="form-control" min="{{ date('Y-m-d') }}" value="{{ date('Y-m-d', strtotime('+2 days')) }}">
+            </div>
+            <div class="form-group">
+              <label for="clientNotes">Special Requests / Event Date</label>
+              <input type="text" id="clientNotes" name="notes" class="form-control" placeholder="e.g. Wedding on Dec 14, looking for raw silk">
+            </div>
+          </div>
+
+          <div class="form-status" id="bookingStatus" style="display: none;"></div>
+
+          <button type="submit" class="btn btn-gold btn-block" id="bookingSubmitBtn">
+            <span class="btn-text">Confirm & Connect on WhatsApp</span>
+            <span class="btn-icon">→</span>
+          </button>
+
+          <p class="form-footnote">
+            🔒 Consultations are strictly confidential. Creative Director Pari Agarwal’s VIP team will reach out within 2 business hours.
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Couture Quick View Modal -->
+<div class="modal-backdrop" id="quickViewModal" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-lg">
+    <div class="modal-content">
+      <button class="modal-close-btn" id="closeQuickViewModal" aria-label="Close modal">&times;</button>
+      
+      <div class="quickview-grid">
+        <div class="quickview-media">
+          <img src="" id="qvImage" alt="Couture Piece" class="quickview-img">
+          <span class="quickview-badge" id="qvBadge">Couture</span>
+        </div>
+        
+        <div class="quickview-details">
+          <div class="qv-category" id="qvCategory">Category</div>
+          <h2 class="qv-title" id="qvTitle">Product Title</h2>
+          <p class="qv-subtitle" id="qvSubtitle">Product Subtitle</p>
+          <div class="qv-price" id="qvPrice">Price</div>
+
+          <div class="qv-specs-box">
+            <div class="qv-spec-row">
+              <span class="spec-label">Craftsmanship:</span>
+              <span class="spec-val" id="qvCraft">120 Craft Hours</span>
+            </div>
+            <div class="qv-spec-row">
+              <span class="spec-label">Pure Fabric:</span>
+              <span class="spec-val" id="qvFabric">Silk</span>
+            </div>
+            <div class="qv-spec-row">
+              <span class="spec-label">Artisan Work:</span>
+              <span class="spec-val" id="qvEmbroidery">Zardozi & Sequins</span>
+            </div>
+            <div class="qv-spec-row">
+              <span class="spec-label">Occasion:</span>
+              <span class="spec-val" id="qvOccasion">Wedding</span>
+            </div>
+          </div>
+
+          <p class="qv-desc" id="qvDescription">Product Description</p>
+          
+          <div class="qv-styling-box">
+            <strong>Styling Advisory:</strong> <span id="qvStyling">Advisory text</span>
+          </div>
+
+          <div class="qv-actions">
+            <button class="btn btn-gold btn-block open-booking-modal" id="qvInquireBtn" data-product="">
+              Schedule Atelier Fitting For This Piece
+            </button>
+            <a href="#" target="_blank" rel="noopener" class="btn btn-outline-gold btn-block" id="qvWaBtn">
+              Inquire on WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Floating WhatsApp Concierge Pill -->
+<a href="https://wa.me/{{ $brand['whatsapp'] }}?text=Hello%20Raahat%20ByParitha,%20I%20would%20like%20to%20inquire%20about%20a%20bespoke%20consultation." 
+   target="_blank" 
+   rel="noopener noreferrer" 
+   class="floating-whatsapp-pill" 
+   aria-label="Direct WhatsApp Concierge">
+  <div class="pulse-ring"></div>
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+  </svg>
+  <div class="pill-text">
+    <span class="pill-title">Bespoke Concierge</span>
+    <span class="pill-status">Online Now</span>
+  </div>
+</a>

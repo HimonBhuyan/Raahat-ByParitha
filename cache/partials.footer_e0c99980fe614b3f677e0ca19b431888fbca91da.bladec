@@ -1,0 +1,123 @@
+<footer class="luxury-footer">
+ <!-- Instagram Highlights Ribbon -->
+ <div class="footer-instagram-bar">
+ <div class="container">
+ <div class="insta-header-row">
+ <div>
+ <span class="sub-label">SOCIAL DIARY</span>
+ <h3 class="insta-title">Follow <a href="<?php echo \htmlentities($brand['instagram_url']??'', ENT_QUOTES, 'UTF-8', false); ?>" target="_blank" rel="noopener">@raahat_by_paritha</a></h3>
+ </div>
+ <a href="<?php echo \htmlentities($brand['instagram_url']??'', ENT_QUOTES, 'UTF-8', false); ?>" target="_blank" rel="noopener" class="btn btn-outline-gold btn-sm">
+ <span>View Instagram</span>
+ <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+ </a>
+ </div>
+
+ <div class="insta-grid">
+ <a href="<?php echo \htmlentities($brand['instagram_url']??'', ENT_QUOTES, 'UTF-8', false); ?>" target="_blank" rel="noopener" class="insta-item">
+ <img src="<?php echo \htmlentities($baseUrl??'', ENT_QUOTES, 'UTF-8', false); ?>/assets/images/hero-sherwani.jpg" alt="Raahat Bridal Sherwani" loading="lazy">
+ <div class="insta-overlay"><span>Fits ✨</span></div>
+ </a>
+ <a href="<?php echo \htmlentities($brand['instagram_url']??'', ENT_QUOTES, 'UTF-8', false); ?>" target="_blank" rel="noopener" class="insta-item">
+ <img src="<?php echo \htmlentities($baseUrl??'', ENT_QUOTES, 'UTF-8', false); ?>/assets/images/tuxedo-black-sequin.jpg" alt="Raahat Bespoke Tuxedo" loading="lazy">
+ <div class="insta-overlay"><span>Black Tie ✨</span></div>
+ </a>
+ <a href="<?php echo \htmlentities($brand['instagram_url']??'', ENT_QUOTES, 'UTF-8', false); ?>" target="_blank" rel="noopener" class="insta-item">
+ <img src="<?php echo \htmlentities($baseUrl??'', ENT_QUOTES, 'UTF-8', false); ?>/assets/images/south-silk-wedding.jpg" alt="South Indian Groom Pure Silk" loading="lazy">
+ <div class="insta-overlay"><span>Muhurtham ✨</span></div>
+ </a>
+ <a href="<?php echo \htmlentities($brand['instagram_url']??'', ENT_QUOTES, 'UTF-8', false); ?>" target="_blank" rel="noopener" class="insta-item">
+ <img src="<?php echo \htmlentities($baseUrl??'', ENT_QUOTES, 'UTF-8', false); ?>/assets/images/wine-velvet-tuxedo.jpg" alt="Wine Velvet Tuxedo" loading="lazy">
+ <div class="insta-overlay"><span>Soirée ✨</span></div>
+ </a>
+ <a href="<?php echo \htmlentities($brand['instagram_url']??'', ENT_QUOTES, 'UTF-8', false); ?>" target="_blank" rel="noopener" class="insta-item">
+ <img src="<?php echo \htmlentities($baseUrl??'', ENT_QUOTES, 'UTF-8', false); ?>/assets/images/lookbook-teal-velvet.jpg" alt="Teal Velvet Achkan" loading="lazy">
+ <div class="insta-overlay"><span>Royal Velvet ✨</span></div>
+ </a>
+ <a href="<?php echo \htmlentities($brand['instagram_url']??'', ENT_QUOTES, 'UTF-8', false); ?>" target="_blank" rel="noopener" class="insta-item">
+ <img src="<?php echo \htmlentities($baseUrl??'', ENT_QUOTES, 'UTF-8', false); ?>/assets/images/boutique-store.jpg" alt="Flagship Salon" loading="lazy">
+ <div class="insta-overlay"><span>Store 📍</span></div>
+ </a>
+ </div>
+ </div>
+ </div>
+
+ <div class="container footer-main-content">
+ <div class="footer-grid">
+ <!-- Column 1: Brand Lore -->
+ <div class="footer-col brand-col">
+ <img src="<?php echo \htmlentities($baseUrl??'', ENT_QUOTES, 'UTF-8', false); ?>/assets/images/logo.svg" alt="Raahat ByParitha" class="footer-logo">
+ <p class="brand-desc">
+ A luxury bespoke menswear fashion house based in Chennai and Bangalore. Handcrafting heirloom wedding sherwanis, black-tie tuxedos, and modern Indo-Western silhouettes rooted in Indian textile heritage and Savile Row architectural precision.
+ </p>
+ <div class="founder-badge">
+ <span class="founder-title">Creative Director:</span>
+ <span class="founder-name">Pari Agarwal</span>
+ </div>
+ </div>
+
+ <!-- Column 2: Haute Couture Quick Links -->
+ <div class="footer-col">
+ <h4 class="footer-heading">Haute Couture</h4>
+ <ul class="footer-links">
+ <li><a href="<?php echo \htmlentities($baseUrl??'', ENT_QUOTES, 'UTF-8', false); ?>/index.php?page=collections&cat=weddings">Royal Wedding Sherwanis</a></li>
+ <li><a href="<?php echo \htmlentities($baseUrl??'', ENT_QUOTES, 'UTF-8', false); ?>/index.php?page=collections&cat=tuxedos">Bespoke Embellished Tuxedos</a></li>
+ <li><a href="<?php echo \htmlentities($baseUrl??'', ENT_QUOTES, 'UTF-8', false); ?>/index.php?page=collections&cat=weddings">Traditional South Indian Silk Sets</a></li>
+ <li><a href="<?php echo \htmlentities($baseUrl??'', ENT_QUOTES, 'UTF-8', false); ?>/index.php?page=collections&cat=bandhgala">Heritage Velvet Bandhgalas</a></li>
+ <li><a href="<?php echo \htmlentities($baseUrl??'', ENT_QUOTES, 'UTF-8', false); ?>/index.php?page=collections&cat=indowestern">Indo-Western Asymmetric Cuts</a></li>
+ <li><a href="<?php echo \htmlentities($baseUrl??'', ENT_QUOTES, 'UTF-8', false); ?>/index.php?page=bespoke">40+ Master Measurements Guide</a></li>
+ </ul>
+ </div>
+
+ <!-- Column 3: Ateliers -->
+ <div class="footer-col">
+ <h4 class="footer-heading">Private Ateliers</h4>
+ <div class="atelier-summary">
+ <div class="atelier-item">
+ <span class="atelier-city">CHENNAI SALON</span>
+ <p>Khader Nawaz Khan Road (Near The Folly / Amethyst), Nungambakkam, Chennai</p>
+ <span class="hours">Tue – Sun: By Appointment</span>
+ </div>
+ <div class="atelier-item" style="margin-top: 15px;">
+ <span class="atelier-city">BANGALORE STUDIO</span>
+ <p>100 Feet Road, Indiranagar, Bangalore</p>
+ <span class="hours">Tue – Sun: By Appointment</span>
+ </div>
+ </div>
+ </div>
+
+ <!-- Column 4: Private Concierge & VIP Inquiries -->
+ <div class="footer-col">
+ <h4 class="footer-heading">VIP Concierge</h4>
+ <p class="concierge-desc">
+ Schedule private fitting appointments or speak directly with Creative Director Pari Agarwal’s bridal concierge team.
+ </p>
+ <div class="concierge-contacts">
+ <a href="tel:<?php echo \htmlentities(str_replace(' ', '', $brand['phone'])??'', ENT_QUOTES, 'UTF-8', false); ?>" class="contact-pill">
+ <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+ <span><?php echo \htmlentities($brand['phone']??'', ENT_QUOTES, 'UTF-8', false); ?></span>
+ </a>
+ <a href="https://wa.me/<?php echo \htmlentities($brand['whatsapp']??'', ENT_QUOTES, 'UTF-8', false); ?>?text=Hello%20Raahat%20ByParitha,%20I%20would%20like%20to%20inquire%20about%20a%20bespoke%20appointment." target="_blank" rel="noopener" class="contact-pill whatsapp">
+ <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+ <span>WhatsApp Direct Desk</span>
+ </a>
+ </div>
+ <button class="btn btn-gold btn-block open-booking-modal" style="margin-top: 15px;">
+ Book Atelier Fitting
+ </button>
+ </div>
+ </div>
+
+ <!-- Bottom Copyright -->
+ <div class="footer-bottom">
+ <p>&copy; <?php echo \htmlentities(date('Y')??'', ENT_QUOTES, 'UTF-8', false); ?> Raahat ByParitha. All rights reserved. A Luxury Bespoke Menswear Fashion House.</p>
+ <div class="footer-sub-links">
+ <span>Chennai</span>
+ <span>•</span>
+ <span>Bangalore</span>
+ <span>•</span>
+ <span>Worldwide Shipping & Destination Wedding Concierge</span>
+ </div>
+ </div>
+ </div>
+</footer>

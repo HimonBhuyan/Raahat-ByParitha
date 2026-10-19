@@ -1,0 +1,112 @@
+<?php $_shouldextend[1]=1; ?>
+
+<?php $this->startSection('title', 'Haute Couture Lookbook — Raahat ByParitha | Bespoke Menswear'); ?>
+<?php $this->startSection('meta_description', 'Explore Raahat ByParitha’s couture collections: Handcrafted wedding sherwanis, bespoke sequin tuxedos, pure silk muhurtham sets, and royal velvet bandhgalas.'); ?>
+
+<?php $this->startSection('content'); ?>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+ <div class="page-hero-bg">
+ <img src="<?php echo \htmlentities($baseUrl??'', ENT_QUOTES, 'UTF-8', false); ?>/assets/images/hero-sherwani.jpg" alt="Raahat ByParitha Haute Couture" class="page-hero-img">
+ <div class="page-hero-overlay"></div>
+ </div>
+ <div class="container page-hero-content text-center">
+ <span class="section-tag">THE HAUTE COUTURE LOOKBOOK</span>
+ <h1 class="page-title">The Couture Repertoire</h1>
+ <p class="page-subtitle">
+ Heirloom wedding sherwanis, black-tie embellished tuxedos, and South Indian pure silk ensembles hand-tailored in our Chennai and Bangalore ateliers.
+ </p>
+ </div>
+</section>
+
+<!-- LOOKBOOK MAIN SECTION -->
+<section class="section lookbook-section">
+ <div class="container">
+ <!-- Filter Nav -->
+ <div class="lookbook-filter-bar">
+ <div class="filter-group">
+ <button class="filter-tab-btn active" data-filter="all">All Silhouettes (<?php echo \htmlentities(count($products)??'', ENT_QUOTES, 'UTF-8', false); ?>)</button>
+ <button class="filter-tab-btn" data-filter="weddings">Royal Weddings & Muhurtham</button>
+ <button class="filter-tab-btn" data-filter="tuxedos">Bespoke Tuxedos</button>
+ <button class="filter-tab-btn" data-filter="bandhgala">Heritage Bandhgalas</button>
+ <button class="filter-tab-btn" data-filter="indowestern">Indo-Western Cuts</button>
+ </div>
+
+ <div class="filter-sort">
+ <span class="sort-label">Curated for:</span>
+ <span class="sort-val">Wedding Grooms & VIP Galas</span>
+ </div>
+ </div>
+
+ <!-- Lookbook Grid -->
+ <div class="products-grid lookbook-grid" id="lookbookGrid">
+ <?php $__currentLoopData = $products; $this->addLoop($__currentLoopData);$this->getFirstLoop();
+ foreach($__currentLoopData as $product): $loop = $this->incrementLoopIndices();  ?>
+ <div class="product-card" data-category="<?php echo \htmlentities($product['category']??'', ENT_QUOTES, 'UTF-8', false); ?>">
+ <div class="product-media">
+ <img src="<?php echo \htmlentities($baseUrl??'', ENT_QUOTES, 'UTF-8', false); ?>/<?php echo \htmlentities($product['image']??'', ENT_QUOTES, 'UTF-8', false); ?>" alt="<?php echo \htmlentities($product['title']??'', ENT_QUOTES, 'UTF-8', false); ?>" loading="lazy" class="product-img">
+ <span class="product-badge"><?php echo \htmlentities($product['badge']??'', ENT_QUOTES, 'UTF-8', false); ?></span>
+ 
+ <div class="product-hover-overlay">
+ <button class="btn btn-gold btn-sm btn-quickview" data-product-id="<?php echo \htmlentities($product['id']??'', ENT_QUOTES, 'UTF-8', false); ?>">
+ Quick View
+ </button>
+ <a href="<?php echo \htmlentities($baseUrl??'', ENT_QUOTES, 'UTF-8', false); ?>/index.php?page=product&id=<?php echo \htmlentities($product['id']??'', ENT_QUOTES, 'UTF-8', false); ?>" class="btn btn-outline-gold btn-sm">
+ Full Atelier Specs
+ </a>
+ </div>
+ </div>
+
+ <div class="product-info">
+ <div class="product-meta">
+ <span class="craft-time">⏳ <?php echo \htmlentities($product['craft_time']??'', ENT_QUOTES, 'UTF-8', false); ?></span>
+ <span class="product-cat"><?php echo \htmlentities($product['category_name']??'', ENT_QUOTES, 'UTF-8', false); ?></span>
+ </div>
+
+ <h3 class="product-title">
+ <a href="<?php echo \htmlentities($baseUrl??'', ENT_QUOTES, 'UTF-8', false); ?>/index.php?page=product&id=<?php echo \htmlentities($product['id']??'', ENT_QUOTES, 'UTF-8', false); ?>"><?php echo \htmlentities($product['title']??'', ENT_QUOTES, 'UTF-8', false); ?></a>
+ </h3>
+ <p class="product-sub"><?php echo \htmlentities($product['subtitle']??'', ENT_QUOTES, 'UTF-8', false); ?></p>
+
+ <div class="product-specs-chips">
+ <span class="spec-chip">🧵 <?php echo \htmlentities(explode(' ', $product['fabric'])[0]??'', ENT_QUOTES, 'UTF-8', false); ?> Silk/Wool</span>
+ <span class="spec-chip">✨ <?php echo \htmlentities(explode(' ', $product['embroidery'])[0]??'', ENT_QUOTES, 'UTF-8', false); ?> Karigari</span>
+ </div>
+
+ <div class="product-bottom">
+ <div class="price-wrap">
+ <span class="price-lbl">Starting From</span>
+ <span class="product-price"><?php echo \htmlentities($product['price_display']??'', ENT_QUOTES, 'UTF-8', false); ?></span>
+ </div>
+ 
+ <button class="btn btn-gold btn-sm open-booking-modal" data-product="<?php echo \htmlentities($product['title']??'', ENT_QUOTES, 'UTF-8', false); ?>" data-occasion="<?php echo \htmlentities($product['category_name']??'', ENT_QUOTES, 'UTF-8', false); ?>">
+ Book Fitting
+ </button>
+ </div>
+ </div>
+ </div>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ </div>
+
+ <!-- Atelier Note Card -->
+ <div class="couture-advisory-card">
+ <div class="advisory-icon">⚜️</div>
+ <div class="advisory-text">
+ <h3>Individual Custom Commissions</h3>
+ <p>
+ Every garment displayed in our lookbook can be modified to your color palette, silhouette preferences, and heirloom embroidery crests. Our Creative Director Pari Agarwal personally oversees fabric swatching and design sketches for your wedding wardrobe.
+ </p>
+ </div>
+ <div class="advisory-action">
+ <button class="btn btn-gold open-booking-modal" data-occasion="Custom Couture Commission">
+ Request Bespoke Sketch
+ </button>
+ </div>
+ </div>
+ </div>
+</section>
+
+<?php $this->stopSection(); ?>
+
+<?php if (isset($_shouldextend[1])) { echo $this->runChild('layouts.app'); } ?>
