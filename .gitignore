@@ -1,5 +1,9 @@
+# Vendor dependencies (installed via Composer on deployment)
+vendor/
+
 # Ignore compiled blade templates
 cache/*.php
+cache/*.bladec
 !cache/.gitkeep
 
 # OS generated files

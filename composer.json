@@ -1,5 +1,13 @@
 {
-    "require": {
-        "eftec/bladeone": "^5.0"
-    }
+  "name": "himon/raahat-by-paritha",
+  "description": "Raahat ByParitha Luxury Bespoke Menswear",
+  "type": "project",
+  "require": {
+    "php": ">=8.1",
+    "eftec/bladeone": "^5.0"
+  },
+  "config": {
+    "platform-check": false,
+    "optimize-autoloader": true
+  }
 }
