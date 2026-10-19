@@ -38,10 +38,18 @@
       </button>
     </div>
   </div>
+
+  <!-- Centered Scroll Prompt (Web Full Screen Mode) -->
+  <a href="#atelier-stats" class="hero-scroll-prompt animate-fade-in-delayed" aria-label="Explore The Maison">
+    <span class="scroll-prompt-text">Explore The Maison</span>
+    <div class="scroll-prompt-line">
+      <div class="scroll-prompt-dot"></div>
+    </div>
+  </a>
 </section>
 
 <!-- ATELIER HERITAGE ACCREDITATIONS BAR -->
-<section class="atelier-stats-bar">
+<section class="atelier-stats-bar" id="atelier-stats">
   <div class="container">
     <div class="stats-bar-grid">
       <div class="stat-bar-item">
