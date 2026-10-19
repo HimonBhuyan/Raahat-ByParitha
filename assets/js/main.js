@@ -17,12 +17,14 @@ document.addEventListener('DOMContentLoaded', () => {
   function openDrawer() {
     mobileDrawer?.classList.add('open');
     drawerBackdrop?.classList.add('active');
+    document.body.classList.add('drawer-open');
     document.body.style.overflow = 'hidden';
   }
 
   function closeDrawer() {
     mobileDrawer?.classList.remove('open');
     drawerBackdrop?.classList.remove('active');
+    document.body.classList.remove('drawer-open');
     document.body.style.overflow = '';
   }
 
@@ -226,6 +228,7 @@ document.addEventListener('DOMContentLoaded', () => {
       qvWaBtn.href = `https://wa.me/${config.whatsappNumber}?text=${encodeURIComponent(waText)}`;
 
       quickViewModal.classList.add('active');
+      document.body.classList.add('modal-open');
       document.body.style.overflow = 'hidden';
     });
   });
@@ -233,6 +236,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (closeQuickViewBtn && quickViewModal) {
     closeQuickViewBtn.addEventListener('click', () => {
       quickViewModal.classList.remove('active');
+      document.body.classList.remove('modal-open');
       document.body.style.overflow = '';
     });
   }
@@ -291,7 +295,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // Close Quick View if open
     if (quickViewModal) quickViewModal.classList.remove('active');
 
+    // Close Mobile Drawer if open
+    closeDrawer();
+
     bookingModal.classList.add('active');
+    document.body.classList.add('modal-open');
     document.body.style.overflow = 'hidden';
   }
 
@@ -307,6 +315,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (closeBookingBtn && bookingModal) {
     closeBookingBtn.addEventListener('click', () => {
       bookingModal.classList.remove('active');
+      document.body.classList.remove('modal-open');
       document.body.style.overflow = '';
     });
   }
@@ -316,6 +325,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.key === 'Escape') {
       if (bookingModal) bookingModal.classList.remove('active');
       if (quickViewModal) quickViewModal.classList.remove('active');
+      document.body.classList.remove('modal-open');
       document.body.style.overflow = '';
     }
   });
@@ -325,6 +335,7 @@ document.addEventListener('DOMContentLoaded', () => {
       modal.addEventListener('click', (e) => {
         if (e.target === modal) {
           modal.classList.remove('active');
+          document.body.classList.remove('modal-open');
           document.body.style.overflow = '';
         }
       });

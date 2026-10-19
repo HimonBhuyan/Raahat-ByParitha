@@ -1,11 +1,11 @@
 <header class="luxury-header" id="mainHeader">
   <div class="header-ticker">
     <div class="container ticker-inner">
-      <span>✨ PRIVATE ATELIERS IN CHENNAI & BANGALORE</span>
+      <span class="ticker-city"><span class="ticker-prefix">✨ PRIVATE ATELIERS IN </span><span class="ticker-city-names">CHENNAI & BANGALORE</span></span>
+      <span class="ticker-divider ticker-desktop-only">•</span>
+      <span class="ticker-quote ticker-desktop-only">BESPOKE BRIDAL GROOM CONSULTATIONS BY CREATIVE DIRECTOR PARI AGARWAL</span>
       <span class="ticker-divider">•</span>
-      <span>BESPOKE BRIDAL GROOM CONSULTATIONS BY CREATIVE DIRECTOR PARI AGARWAL</span>
-      <span class="ticker-divider">•</span>
-      <span><a href="tel:{{ str_replace(' ', '', $brand['phone']) }}" class="ticker-link">VIP CONCIERGE: {{ $brand['phone'] }}</a></span>
+      <span><a href="tel:{{ str_replace(' ', '', $brand['phone']) }}" class="ticker-link">VIP: {{ $brand['phone'] }}</a></span>
     </div>
   </div>
 
