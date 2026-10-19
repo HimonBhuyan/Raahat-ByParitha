@@ -95,16 +95,18 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ==========================================
-  // 2. STICKY HEADER SCROLL EFFECT
+  // 2. FIXED HEADER SCROLL EFFECT
   // ==========================================
   const header = document.getElementById('mainHeader');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
+  function updateHeaderState() {
+    if (window.scrollY > 30) {
       header?.classList.add('scrolled');
     } else {
       header?.classList.remove('scrolled');
     }
-  });
+  }
+  window.addEventListener('scroll', updateHeaderState, { passive: true });
+  updateHeaderState();
 
   // ==========================================
   // 3. CATEGORY FILTERING (HOME & LOOKBOOK)
