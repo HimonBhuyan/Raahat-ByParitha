@@ -4,19 +4,30 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 use eftec\bladeone\BladeOne;
 
-// Ensure cache directory exists and is writable
+// Cache directory setup (supports read-only serverless environments like Vercel)
 $cacheDir = __DIR__ . '/cache';
 if (!is_dir($cacheDir)) {
-    mkdir($cacheDir, 0777, true);
+    @mkdir($cacheDir, 0777, true);
+}
+
+// Fallback to /tmp if cacheDir is not writable (Vercel serverless / AWS Lambda read-only root)
+if (!is_writable($cacheDir)) {
+    $tempCache = sys_get_temp_dir() . '/raahat_blade_cache';
+    if (!is_dir($tempCache)) {
+        @mkdir($tempCache, 0777, true);
+    }
+    if (is_writable($tempCache)) {
+        $cacheDir = $tempCache;
+    }
 }
 
 $viewsDir = __DIR__ . '/views';
-$blade = new BladeOne($viewsDir, $cacheDir, BladeOne::MODE_DEBUG);
+$blade = new BladeOne($viewsDir, $cacheDir, BladeOne::MODE_AUTO);
 
-// Determine base URL dynamically
+// Determine base URL dynamically (handles root, XAMPP subfolder, and Vercel /api)
 $scriptDir = str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'] ?? ''));
 $baseUrl = rtrim($scriptDir, '/');
-if ($baseUrl === '/' || $baseUrl === '\\') {
+if ($baseUrl === '/' || $baseUrl === '\\' || $baseUrl === '/api' || $baseUrl === 'api' || $baseUrl === '.') {
     $baseUrl = '';
 }
 

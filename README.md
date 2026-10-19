@@ -32,15 +32,22 @@
 
 ---
 
-## 🚀 Running Locally
+## 🚀 Running & Deploying
 
-### Option 1: PHP Built-in Server
+### Option 1: Deploy to Vercel (Ready Out-of-the-Box)
+1. Push this repository to GitHub (already pushed to `HimonBhuyan/Raahat-ByParitha`).
+2. Go to [vercel.com](https://vercel.com) and click **"Add New Project"**.
+3. Import `Raahat-ByParitha`.
+4. Leave all build settings default (the included `vercel.json` and `vercel-php@0.7.3` handle routing, assets, and serverless PHP runtime automatically).
+5. Click **"Deploy"**.
+
+### Option 2: PHP Built-in Server
 ```bash
 php -S localhost:8000
 ```
 Open [http://localhost:8000](http://localhost:8000) in your browser.
 
-### Option 2: XAMPP (Apache)
+### Option 3: XAMPP (Apache)
 1. Place repository in `c:/xampp/htdocs/Raahat byPa/` (or your Apache web root).
 2. Start Apache in XAMPP Control Panel.
 3. Open [http://localhost/Raahat%20byPa/](http://localhost/Raahat%20byPa/) in your browser.
