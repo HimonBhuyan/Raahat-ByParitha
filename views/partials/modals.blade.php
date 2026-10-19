@@ -18,6 +18,19 @@
         <form id="appointmentForm" class="appointment-form">
           <input type="hidden" name="product" id="bookingProductInput" value="">
           
+          <!-- Dynamic Bespoke Configured Piece Preview (Activated when booked via Atelier Customizer) -->
+          <div class="modal-configured-summary" id="modalConfiguredSummary" style="display: none;">
+            <div class="configured-summary-pill">✨ CONFIGURED BESPOKE ATELIER CUT</div>
+            <div class="configured-summary-card-inner">
+              <img src="" id="modalConfiguredThumb" alt="Configured Silhouette" class="configured-summary-thumb">
+              <div class="configured-summary-details">
+                <h4 id="modalConfiguredTitle" class="configured-summary-title">Imperial Raw Silk Sherwani</h4>
+                <div id="modalConfiguredDetails" class="configured-summary-specs">Handloom Mulberry Silk • Full Imperial Zardozi</div>
+                <div id="modalConfiguredPrice" class="configured-summary-price">₹1,23,000 – ₹1,45,000</div>
+              </div>
+            </div>
+          </div>
+
           <div class="form-row">
             <div class="form-group">
               <label for="clientName">Full Name *</label>
@@ -41,10 +54,15 @@
             <div class="form-group">
               <label for="clientOccasion">Occasion / Garment Category *</label>
               <select id="clientOccasion" name="occasion" class="form-control" required>
+                <option value="Royal Muhurtham & Wedding">Royal Muhurtham & Wedding</option>
+                <option value="Sangeet & Cocktail Night">Sangeet & Cocktail Night</option>
+                <option value="Grand Palace Reception">Grand Palace Reception</option>
+                <option value="Intimate Engagement / Puja">Intimate Engagement / Puja</option>
                 <option value="Wedding Groom Muhurtham & Sherwani">Wedding Groom Muhurtham & Sherwani</option>
                 <option value="Bespoke Embellished Tuxedo (Sangeet / Reception)">Bespoke Embellished Tuxedo (Sangeet / Reception)</option>
                 <option value="South Indian Pure Silk Zari Attire">South Indian Pure Silk Zari Attire</option>
                 <option value="Contemporary Indo-Western Silhouette">Contemporary Indo-Western Silhouette</option>
+                <option value="Regal Jewel Velvet Bandhgala">Regal Jewel Velvet Bandhgala</option>
                 <option value="Full Groom Trousseau (Complete Wardrobe)">Full Groom Trousseau (Complete Wardrobe)</option>
               </select>
             </div>

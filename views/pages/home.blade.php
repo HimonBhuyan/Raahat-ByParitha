@@ -160,97 +160,156 @@
       <div class="customizer-container">
         <!-- Interactive Steps Panel -->
         <div class="customizer-controls">
+          <!-- Step Progress Ribbon -->
+          <div class="customizer-steps-nav">
+            <div class="step-nav-pill active" data-target-step="1"><span class="step-nav-dot">1</span> Occasion</div>
+            <div class="step-nav-arrow">→</div>
+            <div class="step-nav-pill active" data-target-step="2"><span class="step-nav-dot">2</span> Silhouette</div>
+            <div class="step-nav-arrow">→</div>
+            <div class="step-nav-pill active" data-target-step="3"><span class="step-nav-dot">3</span> Fabric</div>
+            <div class="step-nav-arrow">→</div>
+            <div class="step-nav-pill active" data-target-step="4"><span class="step-nav-dot">4</span> Karigari</div>
+          </div>
+
           <!-- Step 1: Occasion -->
-          <div class="config-step" data-step="1">
+          <div class="config-step" data-step="1" id="configStep1">
             <span class="step-num">STEP 01</span>
             <h3 class="step-title">Select Your Occasion</h3>
             <div class="options-grid">
-              <button class="config-opt-btn active" data-group="occasion" data-val="Royal Muhurtham & Wedding" data-price-mod="1.15">
-                <span class="opt-title">Royal Muhurtham</span>
+              <button type="button" class="config-opt-btn active" data-group="occasion" data-val="Royal Muhurtham & Wedding" data-price-mod="1.15">
+                <div class="opt-head">
+                  <span class="opt-title">Royal Muhurtham</span>
+                  <span class="opt-check">✓</span>
+                </div>
                 <span class="opt-desc">Traditional Temple & Grand Ceremony</span>
               </button>
-              <button class="config-opt-btn" data-group="occasion" data-val="Sangeet & Cocktail Night" data-price-mod="1.1">
-                <span class="opt-title">Sangeet & Cocktail</span>
+              <button type="button" class="config-opt-btn" data-group="occasion" data-val="Sangeet & Cocktail Night" data-price-mod="1.1">
+                <div class="opt-head">
+                  <span class="opt-title">Sangeet & Cocktail</span>
+                  <span class="opt-check">✓</span>
+                </div>
                 <span class="opt-desc">Dynamic High-Shine Glamour</span>
               </button>
-              <button class="config-opt-btn" data-group="occasion" data-val="Grand Palace Reception" data-price-mod="1.2">
-                <span class="opt-title">Grand Reception</span>
+              <button type="button" class="config-opt-btn" data-group="occasion" data-val="Grand Palace Reception" data-price-mod="1.2">
+                <div class="opt-head">
+                  <span class="opt-title">Grand Reception</span>
+                  <span class="opt-check">✓</span>
+                </div>
                 <span class="opt-desc">Regal Evening Black-Tie & Velvet</span>
               </button>
-              <button class="config-opt-btn" data-group="occasion" data-val="Intimate Engagement / Puja" data-price-mod="1.0">
-                <span class="opt-title">Engagement / Puja</span>
+              <button type="button" class="config-opt-btn" data-group="occasion" data-val="Intimate Engagement / Puja" data-price-mod="1.0">
+                <div class="opt-head">
+                  <span class="opt-title">Engagement / Puja</span>
+                  <span class="opt-check">✓</span>
+                </div>
                 <span class="opt-desc">Refined Silk Classic Elegance</span>
               </button>
             </div>
           </div>
 
           <!-- Step 2: Silhouette -->
-          <div class="config-step" data-step="2">
+          <div class="config-step" data-step="2" id="configStep2">
             <span class="step-num">STEP 02</span>
             <h3 class="step-title">Choose Architectural Silhouette</h3>
             <div class="options-grid">
-              <button class="config-opt-btn active" data-group="silhouette" data-val="Imperial Raw Silk Sherwani" data-base="95000" data-craft="180">
-                <span class="opt-title">Imperial Sherwani</span>
+              <button type="button" class="config-opt-btn active" data-group="silhouette" data-val="Imperial Raw Silk Sherwani" data-base="95000" data-craft="180">
+                <div class="opt-head">
+                  <span class="opt-title">Imperial Sherwani</span>
+                  <span class="opt-check">✓</span>
+                </div>
                 <span class="opt-desc">Floor-skimming structured achkan with royal drape</span>
               </button>
-              <button class="config-opt-btn" data-group="silhouette" data-val="Bespoke Embellished Tuxedo" data-base="68000" data-craft="120">
-                <span class="opt-title">Embellished Tuxedo</span>
+              <button type="button" class="config-opt-btn" data-group="silhouette" data-val="Bespoke Embellished Tuxedo" data-base="68000" data-craft="120">
+                <div class="opt-head">
+                  <span class="opt-title">Embellished Tuxedo</span>
+                  <span class="opt-check">✓</span>
+                </div>
                 <span class="opt-desc">Peak satin lapel with crystal & micro-sequin cascade</span>
               </button>
-              <button class="config-opt-btn" data-group="silhouette" data-val="South Indian Pure Silk Kurta & Veshti" data-base="48000" data-craft="95">
-                <span class="opt-title">Muhurtham Silk Set</span>
+              <button type="button" class="config-opt-btn" data-group="silhouette" data-val="South Indian Pure Silk Kurta & Veshti" data-base="48000" data-craft="95">
+                <div class="opt-head">
+                  <span class="opt-title">Muhurtham Silk Set</span>
+                  <span class="opt-check">✓</span>
+                </div>
                 <span class="opt-desc">Pure Kanchipuram silk jubba with 24K gold zari stole</span>
               </button>
-              <button class="config-opt-btn" data-group="silhouette" data-val="Modern Asymmetric Indo-Western" data-base="58000" data-craft="100">
-                <span class="opt-title">Indo-Western Achkan</span>
+              <button type="button" class="config-opt-btn" data-group="silhouette" data-val="Modern Asymmetric Indo-Western" data-base="58000" data-craft="100">
+                <div class="opt-head">
+                  <span class="opt-title">Indo-Western Achkan</span>
+                  <span class="opt-check">✓</span>
+                </div>
                 <span class="opt-desc">Asymmetrical crossover placket with French knots</span>
               </button>
-              <button class="config-opt-btn" data-group="silhouette" data-val="Regal Jewel Velvet Bandhgala" data-base="82000" data-craft="140">
-                <span class="opt-title">Jewel Velvet Bandhgala</span>
+              <button type="button" class="config-opt-btn" data-group="silhouette" data-val="Regal Jewel Velvet Bandhgala" data-base="82000" data-craft="140">
+                <div class="opt-head">
+                  <span class="opt-title">Jewel Velvet Bandhgala</span>
+                  <span class="opt-check">✓</span>
+                </div>
                 <span class="opt-desc">Deep plush velvet with heritage bullion neckwork</span>
               </button>
             </div>
           </div>
 
           <!-- Step 3: Pure Fabric Selection -->
-          <div class="config-step" data-step="3">
+          <div class="config-step" data-step="3" id="configStep3">
             <span class="step-num">STEP 03</span>
             <h3 class="step-title">Select Fabric & Loom</h3>
             <div class="options-grid">
-              <button class="config-opt-btn active" data-group="fabric" data-val="Handloom Pure Mulberry Raw Silk" data-fab-mod="0">
-                <span class="opt-title">Pure Mulberry Raw Silk</span>
+              <button type="button" class="config-opt-btn active" data-group="fabric" data-val="Handloom Pure Mulberry Raw Silk" data-fab-mod="0">
+                <div class="opt-head">
+                  <span class="opt-title">Pure Mulberry Raw Silk</span>
+                  <span class="opt-check">✓</span>
+                </div>
                 <span class="opt-desc">Lustrous natural texture & royal structural hold</span>
               </button>
-              <button class="config-opt-btn" data-group="fabric" data-val="Plush Italian Silk Velvet" data-fab-mod="8000">
-                <span class="opt-title">Plush Italian Silk Velvet</span>
+              <button type="button" class="config-opt-btn" data-group="fabric" data-val="Plush Italian Silk Velvet" data-fab-mod="8000">
+                <div class="opt-head">
+                  <span class="opt-title">Plush Italian Silk Velvet</span>
+                  <span class="opt-check">✓</span>
+                </div>
                 <span class="opt-desc">Deep luminous sheen in jewel tones</span>
               </button>
-              <button class="config-opt-btn" data-group="fabric" data-val="Super 150s Italian Merino Wool" data-fab-mod="6000">
-                <span class="opt-title">Super 150s Merino Wool</span>
+              <button type="button" class="config-opt-btn" data-group="fabric" data-val="Super 150s Italian Merino Wool" data-fab-mod="6000">
+                <div class="opt-head">
+                  <span class="opt-title">Super 150s Merino Wool</span>
+                  <span class="opt-check">✓</span>
+                </div>
                 <span class="opt-desc">Ultra-breathable Savile Row evening drape</span>
               </button>
-              <button class="config-opt-btn" data-group="fabric" data-val="Hand-Spun Matka & Tussar Silk" data-fab-mod="4000">
-                <span class="opt-title">Hand-Spun Matka Silk</span>
+              <button type="button" class="config-opt-btn" data-group="fabric" data-val="Hand-Spun Matka & Tussar Silk" data-fab-mod="4000">
+                <div class="opt-head">
+                  <span class="opt-title">Hand-Spun Matka Silk</span>
+                  <span class="opt-check">✓</span>
+                </div>
                 <span class="opt-desc">Rich organic slub with contemporary matte finish</span>
               </button>
             </div>
           </div>
 
           <!-- Step 4: Karigari / Hand-Embroidery -->
-          <div class="config-step" data-step="4">
+          <div class="config-step" data-step="4" id="configStep4">
             <span class="step-num">STEP 04</span>
             <h3 class="step-title">Embroidery & Embellishment Intensity</h3>
             <div class="options-grid">
-              <button class="config-opt-btn" data-group="embroidery" data-val="Minimalist Hand-Finished Detailing" data-emb-mod="0" data-craft-extra="0">
-                <span class="opt-title">Subtle Tone-on-Tone</span>
+              <button type="button" class="config-opt-btn" data-group="embroidery" data-val="Minimalist Hand-Finished Detailing" data-emb-mod="0" data-craft-extra="0">
+                <div class="opt-head">
+                  <span class="opt-title">Subtle Tone-on-Tone</span>
+                  <span class="opt-check">✓</span>
+                </div>
                 <span class="opt-desc">Refined Milanese buttonholes & micro-cuff detailing</span>
               </button>
-              <button class="config-opt-btn" data-group="embroidery" data-val="Classic Zari Placket & Collar" data-emb-mod="12000" data-craft-extra="30">
-                <span class="opt-title">Classic Zari Placket</span>
+              <button type="button" class="config-opt-btn" data-group="embroidery" data-val="Classic Zari Placket & Collar" data-emb-mod="12000" data-craft-extra="30">
+                <div class="opt-head">
+                  <span class="opt-title">Classic Zari Placket</span>
+                  <span class="opt-check">✓</span>
+                </div>
                 <span class="opt-desc">Botanical hand-embroidered neckline, placket & cuffs</span>
               </button>
-              <button class="config-opt-btn active" data-group="embroidery" data-val="Full Imperial Zardozi, Crystals & Pearls" data-emb-mod="28000" data-craft-extra="65">
-                <span class="opt-title">Imperial Full Zardozi</span>
+              <button type="button" class="config-opt-btn active" data-group="embroidery" data-val="Full Imperial Zardozi, Crystals & Pearls" data-emb-mod="28000" data-craft-extra="65">
+                <div class="opt-head">
+                  <span class="opt-title">Imperial Full Zardozi</span>
+                  <span class="opt-check">✓</span>
+                </div>
                 <span class="opt-desc">Heirloom bullion gold wire, bugle beads & seed pearls</span>
               </button>
             </div>
@@ -260,10 +319,14 @@
         <!-- Live Atelier Estimate & Summary Card -->
         <div class="customizer-summary-card">
           <div class="summary-inner">
-            <div class="summary-badge">CUSTOM ATELIER ESTIMATE</div>
+            <div class="summary-badge-header">
+              <span class="summary-badge">CUSTOM ATELIER ESTIMATE</span>
+              <span class="summary-live-tag"><span class="live-dot"></span> LIVE CALCULATION</span>
+            </div>
             
             <div class="summary-media-preview">
               <img src="{{ $baseUrl }}/assets/images/hero-sherwani.jpg" id="customizerPreviewImg" alt="Bespoke Preview">
+              <span class="preview-silhouette-tag" id="previewSilhouetteTag">Imperial Raw Silk Sherwani</span>
             </div>
 
             <div class="summary-specs">
@@ -285,22 +348,23 @@
               </div>
               <div class="spec-line">
                 <span class="lbl">Craft Timeline:</span>
-                <strong id="summaryCraft">180 Hours of Karigari</strong>
+                <strong id="summaryCraft">245 Hours of Karigari</strong>
               </div>
             </div>
 
             <div class="summary-price-box">
               <span class="est-label">Estimated Bespoke Commission:</span>
-              <div class="est-price" id="summaryPrice">₹1,23,000 – ₹1,45,000</div>
+              <div class="est-price" id="summaryPrice">₹1,41,000 – ₹1,67,000</div>
               <span class="est-sub">Includes 40+ precision measurements, muslin basting fitting, and 1-on-1 styling with Creative Director Pari Agarwal.</span>
             </div>
 
             <div class="summary-cta-group">
-              <button class="btn btn-gold btn-block" id="bookConfiguredPieceBtn">
+              <button type="button" class="btn btn-gold btn-block" id="bookConfiguredPieceBtn">
                 <span>Book Atelier Consultation For This Cut</span>
                 <span class="btn-icon">→</span>
               </button>
-              <a href="#" target="_blank" rel="noopener" class="btn btn-outline-gold btn-block" id="waConfiguredBtn">
+              <a href="https://wa.me/{{ $brand['whatsapp'] }}" target="_blank" rel="noopener" class="btn btn-outline-gold btn-block" id="waConfiguredBtn">
+                <span class="btn-icon">💬</span>
                 <span>Direct WhatsApp Consultation</span>
               </a>
             </div>

@@ -109,7 +109,9 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.addEventListener('click', () => {
         const group = btn.getAttribute('data-group');
         const parentStep = btn.closest('.config-step');
-        parentStep.querySelectorAll('.config-opt-btn').forEach(b => b.classList.remove('active'));
+        if (parentStep) {
+          parentStep.querySelectorAll('.config-opt-btn').forEach(b => b.classList.remove('active'));
+        }
         btn.classList.add('active');
 
         const val = btn.getAttribute('data-val');
@@ -123,6 +125,18 @@ document.addEventListener('DOMContentLoaded', () => {
           configState.craftHours = parseInt(btn.getAttribute('data-craft') || 100, 10);
           if (silhouetteImageMap[val]) {
             configState.previewImg = silhouetteImageMap[val];
+            const silTag = document.getElementById('previewSilhouetteTag');
+            if (silTag) silTag.textContent = val;
+            const previewImg = document.getElementById('customizerPreviewImg');
+            if (previewImg) {
+              previewImg.style.opacity = '0.35';
+              previewImg.style.transform = 'scale(0.97)';
+              setTimeout(() => {
+                previewImg.src = configState.previewImg;
+                previewImg.style.opacity = '1';
+                previewImg.style.transform = 'scale(1)';
+              }, 140);
+            }
           }
         } else if (group === 'fabric') {
           configState.fabric = val;
@@ -137,6 +151,18 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
+    // Step navigation pill clicks (scroll smoothly to step)
+    const stepNavPills = customizerSection.querySelectorAll('.step-nav-pill');
+    stepNavPills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        const stepNum = pill.getAttribute('data-target-step');
+        const targetStepEl = document.getElementById(`configStep${stepNum}`);
+        if (targetStepEl) {
+          targetStepEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+      });
+    });
+
     function updateCustomizerUI() {
       // Calculate Price Range
       const subtotal = (configState.basePrice + configState.fabricMod + configState.embroideryMod) * configState.occasionMod;
@@ -144,46 +170,63 @@ document.addEventListener('DOMContentLoaded', () => {
       const roundedHigh = Math.round((subtotal * 1.18) / 1000) * 1000;
       const totalCraft = configState.craftHours + configState.craftExtra;
 
-      // Update DOM
-      document.getElementById('summaryOccasion').textContent = configState.occasion;
-      document.getElementById('summarySilhouette').textContent = configState.silhouette;
-      document.getElementById('summaryFabric').textContent = configState.fabric;
-      document.getElementById('summaryEmbroidery').textContent = configState.embroidery;
-      document.getElementById('summaryCraft').textContent = `${totalCraft} Hours of Karigari`;
-      document.getElementById('summaryPrice').textContent = `₹${roundedLow.toLocaleString('en-IN')} – ₹${roundedHigh.toLocaleString('en-IN')}`;
+      // Update Specs in Summary Card
+      const occEl = document.getElementById('summaryOccasion');
+      if (occEl) occEl.textContent = configState.occasion;
 
-      const previewImg = document.getElementById('customizerPreviewImg');
-      if (previewImg && previewImg.src !== configState.previewImg) {
-        previewImg.style.opacity = 0;
-        setTimeout(() => {
-          previewImg.src = configState.previewImg;
-          previewImg.style.opacity = 1;
-        }, 200);
+      const silEl = document.getElementById('summarySilhouette');
+      if (silEl) silEl.textContent = configState.silhouette;
+
+      const fabEl = document.getElementById('summaryFabric');
+      if (fabEl) fabEl.textContent = configState.fabric;
+
+      const embEl = document.getElementById('summaryEmbroidery');
+      if (embEl) embEl.textContent = configState.embroidery;
+
+      const craftEl = document.getElementById('summaryCraft');
+      if (craftEl) {
+        craftEl.textContent = `${totalCraft} Hours of Karigari`;
       }
 
-      // Update WhatsApp URL
+      const priceEl = document.getElementById('summaryPrice');
+      if (priceEl) {
+        priceEl.textContent = `₹${roundedLow.toLocaleString('en-IN')} – ₹${roundedHigh.toLocaleString('en-IN')}`;
+      }
+
+      // Update WhatsApp Consultation Link
       const waText = `✨ *Raahat ByParitha — Bespoke Configurator Request* ✨\n\n` +
         `• *Occasion:* ${configState.occasion}\n` +
         `• *Silhouette:* ${configState.silhouette}\n` +
         `• *Fabric:* ${configState.fabric}\n` +
-        `• *Embroidery:* ${configState.embroidery}\n` +
-        `• *Estimated Timeline:* ${totalCraft} Craft Hours\n` +
-        `• *Estimated Range:* ₹${roundedLow.toLocaleString('en-IN')} – ₹${roundedHigh.toLocaleString('en-IN')}\n\n` +
+        `• *Karigari:* ${configState.embroidery}\n` +
+        `• *Craft Timeline:* ${totalCraft} Craft Hours\n` +
+        `• *Estimated Commission:* ₹${roundedLow.toLocaleString('en-IN')} – ₹${roundedHigh.toLocaleString('en-IN')}\n\n` +
         `I would like to schedule a private fitting with Creative Director Pari Agarwal.`;
 
       const waBtn = document.getElementById('waConfiguredBtn');
       if (waBtn) {
-        waBtn.href = `https://wa.me/${config.whatsappNumber}?text=${encodeURIComponent(waText)}`;
+        const waUrl = `https://wa.me/${config.whatsappNumber}?text=${encodeURIComponent(waText)}`;
+        waBtn.href = waUrl;
+        waBtn.onclick = (e) => {
+          e.preventDefault();
+          window.open(waUrl, '_blank');
+        };
       }
 
-      // Update Book Button Click Action
+      // Update Book Atelier Consultation Button
       const bookBtn = document.getElementById('bookConfiguredPieceBtn');
       if (bookBtn) {
-        bookBtn.onclick = () => {
+        bookBtn.onclick = (e) => {
+          e.preventDefault();
           openBookingModal({
             occasion: configState.occasion,
-            product: `${configState.silhouette} (${configState.fabric}, ${configState.embroidery})`,
-            notes: `Configured via Atelier Builder: ~₹${roundedLow.toLocaleString('en-IN')}`
+            product: configState.silhouette,
+            fabric: configState.fabric,
+            embroidery: configState.embroidery,
+            craft: `${totalCraft} Hours of Karigari`,
+            price: `₹${roundedLow.toLocaleString('en-IN')} – ₹${roundedHigh.toLocaleString('en-IN')}`,
+            image: configState.previewImg,
+            notes: `Configured via Atelier Builder: ${configState.silhouette} in ${configState.fabric} with ${configState.embroidery} (~₹${roundedLow.toLocaleString('en-IN')} – ₹${roundedHigh.toLocaleString('en-IN')})`
           });
         };
       }
@@ -251,17 +294,41 @@ document.addEventListener('DOMContentLoaded', () => {
   function openBookingModal(data = {}) {
     if (!bookingModal) return;
 
+    // Display Bespoke Configured Summary Ribbon if configured data passed
+    const configSummary = document.getElementById('modalConfiguredSummary');
+    if (configSummary) {
+      if (data.fabric || data.price) {
+        configSummary.style.display = 'block';
+        const thumb = document.getElementById('modalConfiguredThumb');
+        if (thumb && data.image) thumb.src = data.image;
+
+        const titleEl = document.getElementById('modalConfiguredTitle');
+        if (titleEl) titleEl.textContent = `${data.product || 'Bespoke Garment'}`;
+
+        const specsEl = document.getElementById('modalConfiguredDetails');
+        if (specsEl) specsEl.textContent = `${data.fabric || ''} • ${data.embroidery || ''} • ${data.craft || ''}`;
+
+        const priceEl = document.getElementById('modalConfiguredPrice');
+        if (priceEl) priceEl.textContent = `Commission Range: ${data.price || ''}`;
+      } else {
+        configSummary.style.display = 'none';
+      }
+    }
+
     if (data.occasion) {
       const occSelect = document.getElementById('clientOccasion');
       if (occSelect) {
-        // Look for matching option or select first
         let matched = false;
         for (let i = 0; i < occSelect.options.length; i++) {
-          if (occSelect.options[i].text.toLowerCase().includes(data.occasion.toLowerCase())) {
+          if (occSelect.options[i].value === data.occasion || occSelect.options[i].text.toLowerCase().includes(data.occasion.toLowerCase())) {
             occSelect.selectedIndex = i;
             matched = true;
             break;
           }
+        }
+        if (!matched) {
+          const opt = new Option(data.occasion, data.occasion, true, true);
+          occSelect.add(opt);
         }
       }
     }
