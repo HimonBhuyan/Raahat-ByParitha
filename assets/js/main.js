@@ -93,28 +93,76 @@ document.addEventListener('DOMContentLoaded', () => {
       embroidery: 'Full Imperial Zardozi, Crystals & Pearls',
       embroideryMod: 28000,
       craftExtra: 65,
-      previewImg: `${config.baseUrl}/assets/images/hero-sherwani.jpg`
+      previewImg: `${config.baseUrl}/assets/images/hero-sherwani.jpg`,
+      previewTag: 'Silhouette • Imperial Sherwani',
+      stepImages: {
+        '1': `${config.baseUrl}/assets/images/hero-sherwani.jpg`,
+        '2': `${config.baseUrl}/assets/images/hero-sherwani.jpg`,
+        '3': `${config.baseUrl}/assets/images/south-silk-wedding.jpg`,
+        '4': `${config.baseUrl}/assets/images/atelier-craft.jpg`
+      },
+      stepTags: {
+        '1': 'Occasion • Royal Muhurtham',
+        '2': 'Silhouette • Imperial Sherwani',
+        '3': 'Fabric • Pure Mulberry Raw Silk',
+        '4': 'Karigari • Full Imperial Zardozi'
+      }
     };
 
-    const silhouetteImageMap = {
-      'Imperial Raw Silk Sherwani': `${config.baseUrl}/assets/images/hero-sherwani.jpg`,
-      'Bespoke Embellished Tuxedo': `${config.baseUrl}/assets/images/tuxedo-black-sequin.jpg`,
-      'South Indian Pure Silk Kurta & Veshti': `${config.baseUrl}/assets/images/south-silk-wedding.jpg`,
-      'Modern Asymmetric Indo-Western': `${config.baseUrl}/assets/images/indowestern-lilac.jpg`,
-      'Regal Jewel Velvet Bandhgala': `${config.baseUrl}/assets/images/lookbook-teal-velvet.jpg`
-    };
+    function switchPreviewImage(imgUrl, imgTag, stepNum) {
+      if (!imgUrl) return;
+
+      const silTag = document.getElementById('previewSilhouetteTag');
+      if (silTag && imgTag) silTag.textContent = imgTag;
+
+      // Update active state on preview-step-tabs
+      if (stepNum) {
+        const previewTabs = customizerSection.querySelectorAll('.preview-tab-btn');
+        previewTabs.forEach(tab => {
+          if (tab.getAttribute('data-tab-step') === String(stepNum)) {
+            tab.classList.add('active');
+          } else {
+            tab.classList.remove('active');
+          }
+        });
+      }
+
+      const previewImg = document.getElementById('customizerPreviewImg');
+      if (previewImg && previewImg.getAttribute('src') !== imgUrl) {
+        previewImg.style.opacity = '0.3';
+        previewImg.style.transform = 'scale(0.97)';
+        setTimeout(() => {
+          previewImg.src = imgUrl;
+          previewImg.style.opacity = '1';
+          previewImg.style.transform = 'scale(1)';
+        }, 130);
+      }
+    }
 
     const optButtons = customizerSection.querySelectorAll('.config-opt-btn');
     optButtons.forEach(btn => {
       btn.addEventListener('click', () => {
         const group = btn.getAttribute('data-group');
         const parentStep = btn.closest('.config-step');
+        const stepNum = parentStep ? parentStep.getAttribute('data-step') : '2';
+
         if (parentStep) {
           parentStep.querySelectorAll('.config-opt-btn').forEach(b => b.classList.remove('active'));
         }
         btn.classList.add('active');
 
         const val = btn.getAttribute('data-val');
+        const btnImg = btn.getAttribute('data-image');
+        const btnTag = btn.getAttribute('data-image-tag') || val;
+
+        // Immediately update preview image for the selected step
+        if (btnImg) {
+          configState.stepImages[stepNum] = btnImg;
+          configState.stepTags[stepNum] = btnTag;
+          configState.previewImg = btnImg;
+          configState.previewTag = btnTag;
+          switchPreviewImage(btnImg, btnTag, stepNum);
+        }
 
         if (group === 'occasion') {
           configState.occasion = val;
@@ -123,21 +171,6 @@ document.addEventListener('DOMContentLoaded', () => {
           configState.silhouette = val;
           configState.basePrice = parseInt(btn.getAttribute('data-base') || 60000, 10);
           configState.craftHours = parseInt(btn.getAttribute('data-craft') || 100, 10);
-          if (silhouetteImageMap[val]) {
-            configState.previewImg = silhouetteImageMap[val];
-            const silTag = document.getElementById('previewSilhouetteTag');
-            if (silTag) silTag.textContent = val;
-            const previewImg = document.getElementById('customizerPreviewImg');
-            if (previewImg) {
-              previewImg.style.opacity = '0.35';
-              previewImg.style.transform = 'scale(0.97)';
-              setTimeout(() => {
-                previewImg.src = configState.previewImg;
-                previewImg.style.opacity = '1';
-                previewImg.style.transform = 'scale(1)';
-              }, 140);
-            }
-          }
         } else if (group === 'fabric') {
           configState.fabric = val;
           configState.fabricMod = parseInt(btn.getAttribute('data-fab-mod') || 0, 10);
@@ -151,7 +184,18 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    // Step navigation pill clicks (scroll smoothly to step)
+    // Preview Tab buttons (Occasion, Silhouette, Fabric, Karigari)
+    const previewTabs = customizerSection.querySelectorAll('.preview-tab-btn');
+    previewTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const stepNum = tab.getAttribute('data-tab-step');
+        if (configState.stepImages[stepNum]) {
+          switchPreviewImage(configState.stepImages[stepNum], configState.stepTags[stepNum], stepNum);
+        }
+      });
+    });
+
+    // Step navigation pill clicks (scroll smoothly to step & switch to step's image)
     const stepNavPills = customizerSection.querySelectorAll('.step-nav-pill');
     stepNavPills.forEach(pill => {
       pill.addEventListener('click', () => {
@@ -159,6 +203,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const targetStepEl = document.getElementById(`configStep${stepNum}`);
         if (targetStepEl) {
           targetStepEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+        if (configState.stepImages[stepNum]) {
+          switchPreviewImage(configState.stepImages[stepNum], configState.stepTags[stepNum], stepNum);
         }
       });
     });

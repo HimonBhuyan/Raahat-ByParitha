@@ -176,28 +176,28 @@
             <span class="step-num">STEP 01</span>
             <h3 class="step-title">Select Your Occasion</h3>
             <div class="options-grid">
-              <button type="button" class="config-opt-btn active" data-group="occasion" data-val="Royal Muhurtham & Wedding" data-price-mod="1.15">
+              <button type="button" class="config-opt-btn active" data-group="occasion" data-val="Royal Muhurtham & Wedding" data-price-mod="1.15" data-image="{{ $baseUrl }}/assets/images/hero-sherwani.jpg" data-image-tag="Occasion • Royal Muhurtham">
                 <div class="opt-head">
                   <span class="opt-title">Royal Muhurtham</span>
                   <span class="opt-check">✓</span>
                 </div>
                 <span class="opt-desc">Traditional Temple & Grand Ceremony</span>
               </button>
-              <button type="button" class="config-opt-btn" data-group="occasion" data-val="Sangeet & Cocktail Night" data-price-mod="1.1">
+              <button type="button" class="config-opt-btn" data-group="occasion" data-val="Sangeet & Cocktail Night" data-price-mod="1.1" data-image="{{ $baseUrl }}/assets/images/tuxedo-black-sequin.jpg" data-image-tag="Occasion • Sangeet & Cocktail">
                 <div class="opt-head">
                   <span class="opt-title">Sangeet & Cocktail</span>
                   <span class="opt-check">✓</span>
                 </div>
                 <span class="opt-desc">Dynamic High-Shine Glamour</span>
               </button>
-              <button type="button" class="config-opt-btn" data-group="occasion" data-val="Grand Palace Reception" data-price-mod="1.2">
+              <button type="button" class="config-opt-btn" data-group="occasion" data-val="Grand Palace Reception" data-price-mod="1.2" data-image="{{ $baseUrl }}/assets/images/wine-velvet-tuxedo.jpg" data-image-tag="Occasion • Grand Palace Reception">
                 <div class="opt-head">
                   <span class="opt-title">Grand Reception</span>
                   <span class="opt-check">✓</span>
                 </div>
                 <span class="opt-desc">Regal Evening Black-Tie & Velvet</span>
               </button>
-              <button type="button" class="config-opt-btn" data-group="occasion" data-val="Intimate Engagement / Puja" data-price-mod="1.0">
+              <button type="button" class="config-opt-btn" data-group="occasion" data-val="Intimate Engagement / Puja" data-price-mod="1.0" data-image="{{ $baseUrl }}/assets/images/south-silk-wedding.jpg" data-image-tag="Occasion • Intimate Engagement">
                 <div class="opt-head">
                   <span class="opt-title">Engagement / Puja</span>
                   <span class="opt-check">✓</span>
@@ -212,35 +212,35 @@
             <span class="step-num">STEP 02</span>
             <h3 class="step-title">Choose Architectural Silhouette</h3>
             <div class="options-grid">
-              <button type="button" class="config-opt-btn active" data-group="silhouette" data-val="Imperial Raw Silk Sherwani" data-base="95000" data-craft="180">
+              <button type="button" class="config-opt-btn active" data-group="silhouette" data-val="Imperial Raw Silk Sherwani" data-base="95000" data-craft="180" data-image="{{ $baseUrl }}/assets/images/hero-sherwani.jpg" data-image-tag="Silhouette • Imperial Sherwani">
                 <div class="opt-head">
                   <span class="opt-title">Imperial Sherwani</span>
                   <span class="opt-check">✓</span>
                 </div>
                 <span class="opt-desc">Floor-skimming structured achkan with royal drape</span>
               </button>
-              <button type="button" class="config-opt-btn" data-group="silhouette" data-val="Bespoke Embellished Tuxedo" data-base="68000" data-craft="120">
+              <button type="button" class="config-opt-btn" data-group="silhouette" data-val="Bespoke Embellished Tuxedo" data-base="68000" data-craft="120" data-image="{{ $baseUrl }}/assets/images/tuxedo-black-sequin.jpg" data-image-tag="Silhouette • Embellished Tuxedo">
                 <div class="opt-head">
                   <span class="opt-title">Embellished Tuxedo</span>
                   <span class="opt-check">✓</span>
                 </div>
                 <span class="opt-desc">Peak satin lapel with crystal & micro-sequin cascade</span>
               </button>
-              <button type="button" class="config-opt-btn" data-group="silhouette" data-val="South Indian Pure Silk Kurta & Veshti" data-base="48000" data-craft="95">
+              <button type="button" class="config-opt-btn" data-group="silhouette" data-val="South Indian Pure Silk Kurta & Veshti" data-base="48000" data-craft="95" data-image="{{ $baseUrl }}/assets/images/south-silk-wedding.jpg" data-image-tag="Silhouette • Muhurtham Silk Set">
                 <div class="opt-head">
                   <span class="opt-title">Muhurtham Silk Set</span>
                   <span class="opt-check">✓</span>
                 </div>
                 <span class="opt-desc">Pure Kanchipuram silk jubba with 24K gold zari stole</span>
               </button>
-              <button type="button" class="config-opt-btn" data-group="silhouette" data-val="Modern Asymmetric Indo-Western" data-base="58000" data-craft="100">
+              <button type="button" class="config-opt-btn" data-group="silhouette" data-val="Modern Asymmetric Indo-Western" data-base="58000" data-craft="100" data-image="{{ $baseUrl }}/assets/images/indowestern-lilac.jpg" data-image-tag="Silhouette • Indo-Western Achkan">
                 <div class="opt-head">
                   <span class="opt-title">Indo-Western Achkan</span>
                   <span class="opt-check">✓</span>
                 </div>
                 <span class="opt-desc">Asymmetrical crossover placket with French knots</span>
               </button>
-              <button type="button" class="config-opt-btn" data-group="silhouette" data-val="Regal Jewel Velvet Bandhgala" data-base="82000" data-craft="140">
+              <button type="button" class="config-opt-btn" data-group="silhouette" data-val="Regal Jewel Velvet Bandhgala" data-base="82000" data-craft="140" data-image="{{ $baseUrl }}/assets/images/lookbook-teal-velvet.jpg" data-image-tag="Silhouette • Jewel Velvet Bandhgala">
                 <div class="opt-head">
                   <span class="opt-title">Jewel Velvet Bandhgala</span>
                   <span class="opt-check">✓</span>
@@ -255,28 +255,28 @@
             <span class="step-num">STEP 03</span>
             <h3 class="step-title">Select Fabric & Loom</h3>
             <div class="options-grid">
-              <button type="button" class="config-opt-btn active" data-group="fabric" data-val="Handloom Pure Mulberry Raw Silk" data-fab-mod="0">
+              <button type="button" class="config-opt-btn active" data-group="fabric" data-val="Handloom Pure Mulberry Raw Silk" data-fab-mod="0" data-image="{{ $baseUrl }}/assets/images/south-silk-wedding.jpg" data-image-tag="Fabric • Mulberry Raw Silk">
                 <div class="opt-head">
                   <span class="opt-title">Pure Mulberry Raw Silk</span>
                   <span class="opt-check">✓</span>
                 </div>
                 <span class="opt-desc">Lustrous natural texture & royal structural hold</span>
               </button>
-              <button type="button" class="config-opt-btn" data-group="fabric" data-val="Plush Italian Silk Velvet" data-fab-mod="8000">
+              <button type="button" class="config-opt-btn" data-group="fabric" data-val="Plush Italian Silk Velvet" data-fab-mod="8000" data-image="{{ $baseUrl }}/assets/images/lookbook-teal-velvet.jpg" data-image-tag="Fabric • Italian Silk Velvet">
                 <div class="opt-head">
                   <span class="opt-title">Plush Italian Silk Velvet</span>
                   <span class="opt-check">✓</span>
                 </div>
                 <span class="opt-desc">Deep luminous sheen in jewel tones</span>
               </button>
-              <button type="button" class="config-opt-btn" data-group="fabric" data-val="Super 150s Italian Merino Wool" data-fab-mod="6000">
+              <button type="button" class="config-opt-btn" data-group="fabric" data-val="Super 150s Italian Merino Wool" data-fab-mod="6000" data-image="{{ $baseUrl }}/assets/images/tuxedo-black-sequin.jpg" data-image-tag="Fabric • Super 150s Merino Wool">
                 <div class="opt-head">
                   <span class="opt-title">Super 150s Merino Wool</span>
                   <span class="opt-check">✓</span>
                 </div>
                 <span class="opt-desc">Ultra-breathable Savile Row evening drape</span>
               </button>
-              <button type="button" class="config-opt-btn" data-group="fabric" data-val="Hand-Spun Matka & Tussar Silk" data-fab-mod="4000">
+              <button type="button" class="config-opt-btn" data-group="fabric" data-val="Hand-Spun Matka & Tussar Silk" data-fab-mod="4000" data-image="{{ $baseUrl }}/assets/images/fabric-swatches.jpg" data-image-tag="Fabric • Matka & Tussar Silk">
                 <div class="opt-head">
                   <span class="opt-title">Hand-Spun Matka Silk</span>
                   <span class="opt-check">✓</span>
@@ -291,21 +291,21 @@
             <span class="step-num">STEP 04</span>
             <h3 class="step-title">Embroidery & Embellishment Intensity</h3>
             <div class="options-grid">
-              <button type="button" class="config-opt-btn" data-group="embroidery" data-val="Minimalist Hand-Finished Detailing" data-emb-mod="0" data-craft-extra="0">
+              <button type="button" class="config-opt-btn" data-group="embroidery" data-val="Minimalist Hand-Finished Detailing" data-emb-mod="0" data-craft-extra="0" data-image="{{ $baseUrl }}/assets/images/indowestern-lilac.jpg" data-image-tag="Karigari • Minimalist Finish">
                 <div class="opt-head">
                   <span class="opt-title">Subtle Tone-on-Tone</span>
                   <span class="opt-check">✓</span>
                 </div>
                 <span class="opt-desc">Refined Milanese buttonholes & micro-cuff detailing</span>
               </button>
-              <button type="button" class="config-opt-btn" data-group="embroidery" data-val="Classic Zari Placket & Collar" data-emb-mod="12000" data-craft-extra="30">
+              <button type="button" class="config-opt-btn" data-group="embroidery" data-val="Classic Zari Placket & Collar" data-emb-mod="12000" data-craft-extra="30" data-image="{{ $baseUrl }}/assets/images/south-silk-wedding.jpg" data-image-tag="Karigari • Classic Zari Placket">
                 <div class="opt-head">
                   <span class="opt-title">Classic Zari Placket</span>
                   <span class="opt-check">✓</span>
                 </div>
                 <span class="opt-desc">Botanical hand-embroidered neckline, placket & cuffs</span>
               </button>
-              <button type="button" class="config-opt-btn active" data-group="embroidery" data-val="Full Imperial Zardozi, Crystals & Pearls" data-emb-mod="28000" data-craft-extra="65">
+              <button type="button" class="config-opt-btn active" data-group="embroidery" data-val="Full Imperial Zardozi, Crystals & Pearls" data-emb-mod="28000" data-craft-extra="65" data-image="{{ $baseUrl }}/assets/images/atelier-craft.jpg" data-image-tag="Karigari • Full Imperial Zardozi">
                 <div class="opt-head">
                   <span class="opt-title">Imperial Full Zardozi</span>
                   <span class="opt-check">✓</span>
@@ -326,7 +326,15 @@
             
             <div class="summary-media-preview">
               <img src="{{ $baseUrl }}/assets/images/hero-sherwani.jpg" id="customizerPreviewImg" alt="Bespoke Preview">
-              <span class="preview-silhouette-tag" id="previewSilhouetteTag">Imperial Raw Silk Sherwani</span>
+              <span class="preview-silhouette-tag" id="previewSilhouetteTag">Silhouette • Imperial Sherwani</span>
+            </div>
+
+            <!-- Preview Step View Switcher -->
+            <div class="preview-step-tabs">
+              <button type="button" class="preview-tab-btn" data-tab-step="1">Occasion</button>
+              <button type="button" class="preview-tab-btn active" data-tab-step="2">Silhouette</button>
+              <button type="button" class="preview-tab-btn" data-tab-step="3">Fabric</button>
+              <button type="button" class="preview-tab-btn" data-tab-step="4">Karigari</button>
             </div>
 
             <div class="summary-specs">
