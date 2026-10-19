@@ -20,7 +20,7 @@
 
       <!-- Brand Logo / Monogram -->
       <a href="{{ $baseUrl }}/index.php?page=home" class="brand-logo" aria-label="Raahat ByParitha Home">
-        <img src="{{ $baseUrl }}/assets/images/logo.svg" alt="Raahat ByParitha — Luxury Bespoke Menswear" class="brand-logo-img">
+        <img src="{{ $baseUrl }}/assets/images/logo-horizontal.webp" alt="Raahat ByParitha — Luxury Bespoke Menswear" class="brand-logo-img">
       </a>
 
       <!-- Desktop Navigation Menu -->
@@ -77,7 +77,7 @@
 <!-- Mobile Drawer Menu (Direct Child of Body Context to avoid header backdrop-filter containing block trap) -->
 <div class="mobile-drawer" id="mobileDrawer">
   <div class="drawer-header">
-    <img src="{{ $baseUrl }}/assets/images/logo.svg" alt="Raahat ByParitha" class="drawer-logo">
+    <img src="{{ $baseUrl }}/assets/images/logo-horizontal.webp" alt="Raahat ByParitha" class="drawer-logo">
     <button class="drawer-close-btn" id="drawerCloseBtn" aria-label="Close menu">&times;</button>
   </div>
   <ul class="drawer-links">

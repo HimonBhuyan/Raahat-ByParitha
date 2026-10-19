@@ -24,7 +24,8 @@
   <link rel="stylesheet" href="{{ $baseUrl }}/assets/css/style.css">
   
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="{{ $baseUrl }}/assets/images/logo.svg">
+  <link rel="icon" type="image/png" href="{{ $baseUrl }}/assets/images/logo-icon.png">
+  <link rel="apple-touch-icon" href="{{ $baseUrl }}/assets/images/logo-icon.png">
   
   @yield('extra_head')
 </head>

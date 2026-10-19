@@ -46,7 +46,7 @@
     <div class="footer-grid">
       <!-- Column 1: Brand Lore -->
       <div class="footer-col brand-col">
-        <img src="{{ $baseUrl }}/assets/images/logo.svg" alt="Raahat ByParitha" class="footer-logo">
+        <img src="{{ $baseUrl }}/assets/images/logo-horizontal.webp" alt="Raahat ByParitha" class="footer-logo">
         <p class="brand-desc">
           A luxury bespoke menswear fashion house based in Chennai and Bangalore. Handcrafting heirloom wedding sherwanis, black-tie tuxedos, and modern Indo-Western silhouettes rooted in Indian textile heritage and Savile Row architectural precision.
         </p>
