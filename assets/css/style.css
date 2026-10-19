@@ -190,6 +190,8 @@ h1, h2, h3, h4, h5, h6 {
   border: 1px solid transparent;
   position: relative;
   overflow: hidden;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .btn-gold {
@@ -242,6 +244,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .btn-block {
   width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .link-btn {
@@ -3245,8 +3249,219 @@ body.modal-open .floating-whatsapp-pill {
     gap: 36px;
   }
 
+  /* Atelier Configurator Mobile Fluid Responsiveness */
+  .customizer-section {
+    padding: 40px 0;
+    overflow-x: hidden;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .customizer-wrapper {
+    padding: 20px 14px;
+    border-radius: var(--radius-md);
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  .customizer-header {
+    margin-bottom: 20px;
+    padding: 0 4px;
+    text-align: center;
+  }
+  .customizer-header .section-title {
+    font-size: 1.6rem;
+    line-height: 1.25;
+  }
+  .customizer-header .section-subtitle {
+    font-size: 0.88rem;
+    line-height: 1.5;
+  }
+  .customizer-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    gap: 18px;
+  }
+  .customizer-controls {
+    gap: 16px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+  }
+  .customizer-steps-nav {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    justify-content: flex-start;
+    gap: 6px;
+    padding: 7px 10px;
+    border-radius: 30px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 14px;
+  }
+  .customizer-steps-nav::-webkit-scrollbar {
+    display: none;
+  }
+  .step-nav-pill {
+    flex-shrink: 0;
+    white-space: nowrap;
+    font-size: 0.66rem;
+    letter-spacing: 0.8px;
+    padding: 4px 6px;
+    gap: 5px;
+  }
+  .step-nav-dot {
+    width: 18px;
+    height: 18px;
+    font-size: 0.58rem;
+    flex-shrink: 0;
+  }
+  .step-nav-arrow {
+    flex-shrink: 0;
+    font-size: 0.62rem;
+    opacity: 0.6;
+  }
+  .config-step {
+    padding: 16px 12px;
+    border-radius: var(--radius-sm);
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+  }
+  .config-step .step-title {
+    font-size: 1.15rem;
+    margin-bottom: 12px;
+  }
   .options-grid {
     grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .config-opt-btn {
+    padding: 12px 14px;
+    box-sizing: border-box;
+    width: 100%;
+  }
+  .config-opt-btn .opt-title {
+    font-size: 0.85rem;
+  }
+  .config-opt-btn .opt-desc {
+    font-size: 0.72rem;
+    line-height: 1.35;
+  }
+  .customizer-summary-card {
+    position: static !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-top: 20px !important;
+    box-sizing: border-box !important;
+  }
+  .summary-inner {
+    padding: 18px 14px;
+    border-radius: var(--radius-sm);
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow: hidden;
+  }
+  .summary-media-preview {
+    height: 165px;
+    margin-bottom: 12px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .preview-step-tabs {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4px;
+    margin-bottom: 14px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .preview-tab-btn {
+    padding: 6px 2px;
+    font-size: 0.58rem;
+    letter-spacing: 0.4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .summary-specs {
+    gap: 8px;
+    margin-bottom: 14px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .spec-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 8px;
+    padding-bottom: 6px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .spec-line .lbl {
+    font-size: 0.76rem;
+    flex-shrink: 0;
+    min-width: 65px;
+    color: var(--text-muted);
+  }
+  .spec-line strong {
+    font-size: 0.8rem;
+    text-align: right;
+    flex-grow: 1;
+    max-width: 65%;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.35;
+    color: var(--text-primary);
+  }
+  .summary-price-box {
+    padding: 14px 12px;
+    margin-bottom: 14px;
+    box-sizing: border-box;
+    width: 100%;
+  }
+  .est-price {
+    font-size: 1.25rem;
+    word-break: break-word;
+  }
+  .est-sub {
+    font-size: 0.68rem;
+    line-height: 1.35;
+  }
+  .summary-cta-group {
+    width: 100%;
+    gap: 10px;
+    box-sizing: border-box;
+  }
+  .summary-cta-group .btn {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 13px 12px !important;
+    font-size: 0.74rem !important;
+    letter-spacing: 0.8px !important;
+    white-space: normal !important;
+    text-align: center !important;
+    line-height: 1.35 !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+  }
+  .summary-cta-group .btn span {
+    white-space: normal !important;
+    text-align: center !important;
   }
   .quickview-grid {
     grid-template-columns: 1fr;
@@ -3491,21 +3706,80 @@ body.modal-open .floating-whatsapp-pill {
 
   /* Customizer Mobile Experience */
   .customizer-wrapper {
-    padding: 18px 12px;
+    padding: 16px 10px;
     border-radius: var(--radius-md);
   }
+  .customizer-steps-nav {
+    padding: 6px 8px;
+    gap: 4px;
+    margin-bottom: 12px;
+  }
+  .step-nav-pill {
+    font-size: 0.62rem;
+    padding: 3px 5px;
+    gap: 4px;
+    letter-spacing: 0.5px;
+  }
+  .step-nav-dot {
+    width: 16px;
+    height: 16px;
+    font-size: 0.56rem;
+  }
+  .step-nav-arrow {
+    font-size: 0.58rem;
+  }
   .config-step {
-    padding: 16px 12px;
+    padding: 14px 10px;
+  }
+  .config-step .step-title {
+    font-size: 1.05rem;
+    margin-bottom: 10px;
+  }
+  .config-opt-btn {
+    padding: 11px 12px;
   }
   .summary-inner {
-    padding: 18px 14px;
+    padding: 16px 12px;
+  }
+  .summary-media-preview {
+    height: 155px;
+  }
+  .preview-tab-btn {
+    padding: 5px 2px;
+    font-size: 0.55rem;
+    letter-spacing: 0.3px;
+  }
+  .spec-line {
+    gap: 6px;
+    padding-bottom: 5px;
+  }
+  .spec-line .lbl {
+    font-size: 0.72rem;
+    min-width: 60px;
+  }
+  .spec-line strong {
+    font-size: 0.75rem;
+    max-width: 64%;
+    line-height: 1.3;
+  }
+  .summary-price-box {
+    padding: 12px 10px;
   }
   .est-price {
-    font-size: 1.3rem;
+    font-size: 1.18rem;
   }
-  .summary-specs strong {
-    max-width: 60%;
-    word-break: break-word;
+  .est-sub {
+    font-size: 0.65rem;
+  }
+  .summary-cta-group .btn {
+    padding: 12px 10px !important;
+    font-size: 0.72rem !important;
+    letter-spacing: 0.6px !important;
+    white-space: normal !important;
+    line-height: 1.3 !important;
+  }
+  .summary-cta-group .btn span {
+    white-space: normal !important;
   }
 
   /* Cards Padding */
@@ -3623,17 +3897,72 @@ body.modal-open .floating-whatsapp-pill {
     padding: 14px 20px;
     font-size: 0.82rem;
   }
+  /* Customizer Ultra-compact 440px */
+  .customizer-wrapper {
+    padding: 12px 8px;
+  }
+  .customizer-header .section-title {
+    font-size: 1.4rem;
+  }
+  .customizer-steps-nav {
+    padding: 5px 6px;
+    gap: 3px;
+  }
+  .step-nav-pill {
+    font-size: 0.58rem;
+    letter-spacing: 0.4px;
+    padding: 2px 4px;
+    gap: 3px;
+  }
+  .step-nav-dot {
+    width: 14px;
+    height: 14px;
+    font-size: 0.52rem;
+  }
+  .step-nav-arrow {
+    font-size: 0.52rem;
+  }
+  .config-step {
+    padding: 12px 8px;
+  }
+  .config-step .step-title {
+    font-size: 0.98rem;
+  }
   .config-opt-btn {
-    padding: 12px 12px;
+    padding: 10px 10px;
   }
   .config-opt-btn .opt-title {
-    font-size: 0.82rem;
+    font-size: 0.8rem;
   }
   .config-opt-btn .opt-desc {
+    font-size: 0.7rem;
+  }
+  .summary-inner {
+    padding: 14px 10px;
+  }
+  .summary-media-preview {
+    height: 140px;
+  }
+  .preview-tab-btn {
+    font-size: 0.52rem;
+    padding: 4px 1px;
+    letter-spacing: 0.2px;
+  }
+  .spec-line .lbl {
+    font-size: 0.68rem;
+    min-width: 55px;
+  }
+  .spec-line strong {
     font-size: 0.72rem;
+    max-width: 62%;
   }
   .est-price {
-    font-size: 1.15rem;
+    font-size: 1.08rem;
+  }
+  .summary-cta-group .btn {
+    padding: 11px 8px !important;
+    font-size: 0.68rem !important;
+    letter-spacing: 0.4px !important;
   }
 
   /* Modals on Small Phones (iPhone SE / 320px - 390px) */
