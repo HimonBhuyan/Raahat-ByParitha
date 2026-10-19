@@ -72,27 +72,28 @@
       </div>
     </div>
   </div>
-
-  <!-- Mobile Drawer Menu -->
-  <div class="mobile-drawer" id="mobileDrawer">
-    <div class="drawer-header">
-      <img src="{{ $baseUrl }}/assets/images/logo.svg" alt="Raahat ByParitha" class="drawer-logo">
-      <button class="drawer-close-btn" id="drawerCloseBtn" aria-label="Close menu">&times;</button>
-    </div>
-    <ul class="drawer-links">
-      <li><a href="{{ $baseUrl }}/index.php?page=home" class="{{ $currentPage === 'home' ? 'active' : '' }}">The House</a></li>
-      <li><a href="{{ $baseUrl }}/index.php?page=collections" class="{{ $currentPage === 'collections' ? 'active' : '' }}">Haute Couture Lookbook</a></li>
-      <li><a href="{{ $baseUrl }}/index.php?page=bespoke" class="{{ $currentPage === 'bespoke' ? 'active' : '' }}">The Bespoke Craft</a></li>
-      <li><a href="{{ $baseUrl }}/index.php?page=atelier" class="{{ $currentPage === 'atelier' ? 'active' : '' }}">Creative Director & Atelier</a></li>
-      <li><a href="{{ $baseUrl }}/index.php?page=contact" class="{{ $currentPage === 'contact' ? 'active' : '' }}">Salons & Appointments</a></li>
-    </ul>
-    <div class="drawer-footer">
-      <p class="drawer-sub">Ateliers in Chennai & Bangalore</p>
-      <a href="tel:{{ str_replace(' ', '', $brand['phone']) }}" class="drawer-phone">{{ $brand['phone'] }}</a>
-      <button class="btn btn-gold btn-block open-booking-modal" style="margin-top: 15px;">Book Private Appointment</button>
-    </div>
-  </div>
-
-  <!-- Mobile Drawer Backdrop Overlay -->
-  <div class="drawer-backdrop" id="drawerBackdrop"></div>
 </header>
+
+<!-- Mobile Drawer Menu (Direct Child of Body Context to avoid header backdrop-filter containing block trap) -->
+<div class="mobile-drawer" id="mobileDrawer">
+  <div class="drawer-header">
+    <img src="{{ $baseUrl }}/assets/images/logo.svg" alt="Raahat ByParitha" class="drawer-logo">
+    <button class="drawer-close-btn" id="drawerCloseBtn" aria-label="Close menu">&times;</button>
+  </div>
+  <ul class="drawer-links">
+    <li><a href="{{ $baseUrl }}/index.php?page=home" class="{{ $currentPage === 'home' ? 'active' : '' }}">The House</a></li>
+    <li><a href="{{ $baseUrl }}/index.php?page=collections" class="{{ $currentPage === 'collections' ? 'active' : '' }}">Haute Couture Lookbook</a></li>
+    <li><a href="{{ $baseUrl }}/index.php?page=bespoke" class="{{ $currentPage === 'bespoke' ? 'active' : '' }}">The Bespoke Craft</a></li>
+    <li><a href="{{ $baseUrl }}/index.php?page=atelier" class="{{ $currentPage === 'atelier' ? 'active' : '' }}">Creative Director & Atelier</a></li>
+    <li><a href="{{ $baseUrl }}/index.php?page=contact" class="{{ $currentPage === 'contact' ? 'active' : '' }}">Salons & Appointments</a></li>
+  </ul>
+  <div class="drawer-footer">
+    <p class="drawer-sub">Ateliers in Chennai & Bangalore</p>
+    <a href="tel:{{ str_replace(' ', '', $brand['phone']) }}" class="drawer-phone">{{ $brand['phone'] }}</a>
+    <button class="btn btn-gold btn-block open-booking-modal" style="margin-top: 15px;">Book Private Appointment</button>
+  </div>
+</div>
+
+<!-- Mobile Drawer Backdrop Overlay -->
+<div class="drawer-backdrop" id="drawerBackdrop"></div>
+

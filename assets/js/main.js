@@ -7,6 +7,50 @@ document.addEventListener('DOMContentLoaded', () => {
   const config = window.RaahatConfig || { baseUrl: '', whatsappNumber: '919042409942', products: [] };
 
   // ==========================================
+  // CROSS-DEVICE BODY SCROLL LOCK ENGINE
+  // ==========================================
+  let scrollLockPosition = 0;
+  let activeScrollLocks = 0;
+
+  function lockScroll(lockClass = 'drawer-open') {
+    if (activeScrollLocks === 0) {
+      scrollLockPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+      document.documentElement.classList.add('scroll-locked');
+      document.body.classList.add('scroll-locked');
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${scrollLockPosition}px`;
+      document.body.style.left = '0';
+      document.body.style.right = '0';
+      document.body.style.width = '100%';
+      document.body.style.overflow = 'hidden';
+    }
+    if (lockClass) {
+      document.documentElement.classList.add(lockClass);
+      document.body.classList.add(lockClass);
+    }
+    activeScrollLocks++;
+  }
+
+  function unlockScroll(lockClass = 'drawer-open') {
+    if (lockClass) {
+      document.documentElement.classList.remove(lockClass);
+      document.body.classList.remove(lockClass);
+    }
+    activeScrollLocks = Math.max(0, activeScrollLocks - 1);
+    if (activeScrollLocks === 0) {
+      document.documentElement.classList.remove('scroll-locked');
+      document.body.classList.remove('scroll-locked');
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.left = '';
+      document.body.style.right = '';
+      document.body.style.width = '';
+      document.body.style.overflow = '';
+      window.scrollTo(0, scrollLockPosition);
+    }
+  }
+
+  // ==========================================
   // 1. MOBILE DRAWER NAVIGATION
   // ==========================================
   const mobileMenuBtn = document.getElementById('mobileMenuBtn');
@@ -17,15 +61,13 @@ document.addEventListener('DOMContentLoaded', () => {
   function openDrawer() {
     mobileDrawer?.classList.add('open');
     drawerBackdrop?.classList.add('active');
-    document.body.classList.add('drawer-open');
-    document.body.style.overflow = 'hidden';
+    lockScroll('drawer-open');
   }
 
   function closeDrawer() {
     mobileDrawer?.classList.remove('open');
     drawerBackdrop?.classList.remove('active');
-    document.body.classList.remove('drawer-open');
-    document.body.style.overflow = '';
+    unlockScroll('drawer-open');
   }
 
   if (mobileMenuBtn) {
@@ -38,7 +80,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (drawerBackdrop) {
     drawerBackdrop.addEventListener('click', closeDrawer);
+    // Prevent touch dragging anywhere on backdrop from moving background page
+    drawerBackdrop.addEventListener('touchmove', (e) => {
+      e.preventDefault();
+    }, { passive: false });
   }
+
+  // Close drawer on clicking navigation links
+  const drawerLinks = mobileDrawer?.querySelectorAll('a');
+  drawerLinks?.forEach(link => {
+    link.addEventListener('click', () => {
+      closeDrawer();
+    });
+  });
 
   // ==========================================
   // 2. STICKY HEADER SCROLL EFFECT
@@ -318,16 +372,14 @@ document.addEventListener('DOMContentLoaded', () => {
       qvWaBtn.href = `https://wa.me/${config.whatsappNumber}?text=${encodeURIComponent(waText)}`;
 
       quickViewModal.classList.add('active');
-      document.body.classList.add('modal-open');
-      document.body.style.overflow = 'hidden';
+      lockScroll('modal-open');
     });
   });
 
   if (closeQuickViewBtn && quickViewModal) {
     closeQuickViewBtn.addEventListener('click', () => {
       quickViewModal.classList.remove('active');
-      document.body.classList.remove('modal-open');
-      document.body.style.overflow = '';
+      unlockScroll('modal-open');
     });
   }
 
@@ -413,8 +465,7 @@ document.addEventListener('DOMContentLoaded', () => {
     closeDrawer();
 
     bookingModal.classList.add('active');
-    document.body.classList.add('modal-open');
-    document.body.style.overflow = 'hidden';
+    lockScroll('modal-open');
   }
 
   openBookingButtons.forEach(btn => {
@@ -429,18 +480,24 @@ document.addEventListener('DOMContentLoaded', () => {
   if (closeBookingBtn && bookingModal) {
     closeBookingBtn.addEventListener('click', () => {
       bookingModal.classList.remove('active');
-      document.body.classList.remove('modal-open');
-      document.body.style.overflow = '';
+      unlockScroll('modal-open');
     });
   }
 
   // Close modals on escape key or backdrop click
   window.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
-      if (bookingModal) bookingModal.classList.remove('active');
-      if (quickViewModal) quickViewModal.classList.remove('active');
-      document.body.classList.remove('modal-open');
-      document.body.style.overflow = '';
+      if (bookingModal && bookingModal.classList.contains('active')) {
+        bookingModal.classList.remove('active');
+        unlockScroll('modal-open');
+      }
+      if (quickViewModal && quickViewModal.classList.contains('active')) {
+        quickViewModal.classList.remove('active');
+        unlockScroll('modal-open');
+      }
+      if (mobileDrawer && mobileDrawer.classList.contains('open')) {
+        closeDrawer();
+      }
     }
   });
 
@@ -449,10 +506,15 @@ document.addEventListener('DOMContentLoaded', () => {
       modal.addEventListener('click', (e) => {
         if (e.target === modal) {
           modal.classList.remove('active');
-          document.body.classList.remove('modal-open');
-          document.body.style.overflow = '';
+          unlockScroll('modal-open');
         }
       });
+      // Prevent touch dragging on modal backdrop from scrolling background
+      modal.addEventListener('touchmove', (e) => {
+        if (e.target === modal) {
+          e.preventDefault();
+        }
+      }, { passive: false });
     }
   });
 

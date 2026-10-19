@@ -452,9 +452,11 @@ h1, h2, h3, h4, h5, h6 {
   padding: 24px 20px 32px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  touch-action: pan-y;
   transition: left 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   box-shadow: 12px 0 45px rgba(0, 0, 0, 0.9);
 }
@@ -467,9 +469,10 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 32px;
+  margin-bottom: 28px;
   padding-bottom: 16px;
   border-bottom: 1px solid var(--gold-border);
+  flex-shrink: 0;
 }
 
 .drawer-logo {
@@ -483,14 +486,16 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 2rem;
   line-height: 1;
   cursor: pointer;
+  padding: 4px;
 }
 
 .drawer-links {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  flex: 1;
+  gap: 18px;
+  flex: 1 0 auto;
+  margin-bottom: 24px;
 }
 
 .drawer-links a {
@@ -499,6 +504,7 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 1.5px;
   color: var(--text-secondary);
   display: block;
+  transition: var(--transition-smooth);
 }
 
 .drawer-links a.active, .drawer-links a:hover {
@@ -506,8 +512,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .drawer-footer {
+  margin-top: auto;
   padding-top: 20px;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
+  flex-shrink: 0;
 }
 
 .drawer-sub {
@@ -2791,6 +2799,25 @@ input[type="date"].form-control {
   transition: var(--transition-smooth);
 }
 
+/* Cross-Device Scroll Locking for Mobile Drawer & Modals */
+html.scroll-locked,
+body.scroll-locked,
+html.drawer-open,
+body.drawer-open,
+html.modal-open,
+body.modal-open {
+  overflow: hidden !important;
+  height: 100% !important;
+  max-height: 100% !important;
+  overscroll-behavior: none !important;
+  touch-action: none !important;
+}
+
+body.scroll-locked {
+  position: fixed !important;
+  width: 100% !important;
+}
+
 body.drawer-open .floating-whatsapp-pill,
 body.modal-open .floating-whatsapp-pill {
   opacity: 0 !important;
@@ -3091,12 +3118,17 @@ body.modal-open .floating-whatsapp-pill {
 .drawer-backdrop {
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
   background: rgba(4, 7, 14, 0.75);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   z-index: 2500;
   opacity: 0;
   visibility: hidden;
+  touch-action: none;
+  overscroll-behavior: none;
   transition: all 0.35s ease;
 }
 
