@@ -1974,58 +1974,99 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: var(--radius-lg);
   padding: 40px;
   box-shadow: var(--shadow-luxury);
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.form-title {
-  font-size: 2rem;
-  margin-bottom: 8px;
-}
-
-.form-subtitle {
-  font-size: 0.95rem;
-  color: var(--text-muted);
-  margin-bottom: 32px;
+.appointment-form {
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .form-row {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 18px;
-  margin-bottom: 18px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px 22px;
+  margin-bottom: 20px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .form-group {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
+  min-width: 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .form-group label {
-  font-size: 0.8rem;
-  letter-spacing: 1px;
-  color: var(--text-secondary);
+  font-family: var(--font-sans);
+  font-size: 0.74rem;
+  letter-spacing: 1.2px;
+  color: var(--gold-light);
+  font-weight: 600;
   text-transform: uppercase;
+  line-height: 1.35;
+  white-space: normal;
+  word-break: break-word;
+  display: block;
 }
 
 .form-control {
-  background: rgba(7, 11, 20, 0.8);
-  border: 1px solid rgba(212, 175, 55, 0.25);
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  background: rgba(7, 11, 20, 0.85);
+  border: 1px solid rgba(212, 175, 55, 0.3);
   border-radius: var(--radius-sm);
-  padding: 12px 16px;
+  padding: 12px 14px;
   color: var(--text-primary);
+  font-family: var(--font-sans);
   font-size: 0.92rem;
+  line-height: 1.4;
   transition: var(--transition-smooth);
+}
+
+.form-control::placeholder {
+  color: rgba(142, 155, 174, 0.65);
+  font-size: 0.88rem;
 }
 
 .form-control:focus {
   outline: none;
   border-color: var(--gold-primary);
-  box-shadow: 0 0 12px rgba(212, 175, 55, 0.25);
+  box-shadow: 0 0 14px rgba(212, 175, 55, 0.28);
+  background: rgba(11, 17, 30, 0.95);
 }
 
-.form-control option {
-  background: #0D1424;
+select.form-control {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: rgba(7, 11, 20, 0.85);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1.5 1.75L6 6.25L10.5 1.75' stroke='%23D4AF37' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: calc(100% - 14px) center;
+  background-size: 11px 7px;
+  padding-right: 36px;
+  cursor: pointer;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+select.form-control option {
+  background: #090E1A;
   color: var(--text-primary);
+  padding: 10px;
+}
+
+input[type="date"].form-control {
+  color-scheme: dark;
+  cursor: pointer;
 }
 
 .form-status {
@@ -2048,11 +2089,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .form-footnote {
-  font-size: 0.72rem;
+  font-size: 0.74rem;
   color: var(--text-muted);
   text-align: center;
   margin-top: 16px;
-  line-height: 1.5;
+  line-height: 1.55;
 }
 
 /* FAQ Accordion */
@@ -2140,15 +2181,19 @@ h1, h2, h3, h4, h5, h6 {
 
 .modal-dialog {
   width: 100%;
-  max-width: 580px;
+  max-width: 640px;
   max-height: 90vh;
+  max-height: 90dvh;
   overflow-y: auto;
+  overflow-x: hidden;
   transform: translateY(20px) scale(0.97);
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  margin: auto;
+  box-sizing: border-box;
 }
 
 .modal-dialog-lg {
-  max-width: 880px;
+  max-width: 900px;
 }
 
 .modal-backdrop.active .modal-dialog {
@@ -2159,9 +2204,12 @@ h1, h2, h3, h4, h5, h6 {
   background: #0B1120;
   border: 1px solid var(--gold-border-bright);
   border-radius: var(--radius-md);
-  padding: 36px;
+  padding: 38px 36px 32px;
   position: relative;
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), var(--gold-glow);
+  box-sizing: border-box;
+  overflow: hidden;
+  width: 100%;
 }
 
 .modal-header {
@@ -2841,11 +2889,15 @@ body.modal-open .floating-whatsapp-pill {
 
   /* Modals */
   .modal-dialog {
-    max-width: 95vw;
+    max-width: min(580px, 94vw);
     margin: 16px auto;
+    overflow-x: hidden;
   }
   .modal-content {
-    padding: 24px 18px;
+    padding: 30px 24px 26px;
+    box-sizing: border-box;
+    width: 100%;
+    overflow: hidden;
   }
 }
 
@@ -3082,11 +3134,30 @@ body.modal-open .floating-whatsapp-pill {
   .modal-backdrop {
     padding: 12px 8px;
   }
+  .modal-dialog {
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+    overflow-x: hidden;
+  }
   .modal-title {
     font-size: 1.45rem;
+    line-height: 1.25;
   }
   .modal-content {
-    padding: 22px 14px;
+    padding: 24px 16px 20px;
+    border-radius: var(--radius-md);
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+  .form-group label {
+    font-size: 0.72rem;
   }
 }
 
@@ -3138,6 +3209,33 @@ body.modal-open .floating-whatsapp-pill {
   }
   .est-price {
     font-size: 1.15rem;
+  }
+
+  /* Modals on Small Phones (iPhone SE / 320px - 390px) */
+  .modal-backdrop {
+    padding: 8px 6px;
+  }
+  .modal-content {
+    padding: 20px 14px 16px;
+  }
+  .modal-title {
+    font-size: 1.32rem;
+  }
+  .modal-subtitle {
+    font-size: 0.8rem;
+    margin-bottom: 14px;
+  }
+  .form-group label {
+    font-size: 0.7rem;
+    letter-spacing: 0.8px;
+  }
+  .form-control {
+    padding: 11px 12px;
+    font-size: 16px;
+  }
+  .form-footnote {
+    font-size: 0.68rem;
+    margin-top: 12px;
   }
 }
 
