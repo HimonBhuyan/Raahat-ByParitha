@@ -15,17 +15,17 @@
   <div class="container hero-content">
     <div class="hero-badge animate-fade-in">
       <span class="badge-dot"></span>
-      <span>A LUXURY BESPOKE MENSWEAR FASHION HOUSE</span>
+      <span>HAUTE COUTURE • CHENNAI & BANGALORE</span>
       <span class="badge-dot"></span>
     </div>
 
     <h1 class="hero-title animate-title">
       Where Heritage Splendour<br>
-      <span class="gold-gradient-text">Meets Savile Row Precision</span>
+      <span class="gold-gradient-text hero-title-accent">Meets Savile Row Precision</span>
     </h1>
 
     <p class="hero-description animate-fade-in-delayed">
-      Handcrafting bespoke wedding sherwanis, embellished black-tie tuxedos, and traditional South Indian pure silk ensembles for the discerning groom. Private ateliers in Chennai and Bangalore.
+      Handcrafting bespoke wedding sherwanis, embellished black-tie tuxedos, and South Indian pure silk ensembles for the discerning groom. Private ateliers in Chennai and Bangalore.
     </p>
 
     <div class="hero-actions animate-fade-in-delayed">
@@ -37,31 +37,33 @@
         <span class="btn-text">Book Private Consultation</span>
       </button>
     </div>
+  </div>
+</section>
 
-    <!-- Atelier Statistics Ribbon -->
-    <div class="hero-stats-ribbon">
-      <div class="stat-card">
-        <span class="stat-num">180+</span>
-        <span class="stat-label">Hours Hand Zardozi</span>
+<!-- ATELIER HERITAGE ACCREDITATIONS BAR -->
+<section class="atelier-stats-bar">
+  <div class="container">
+    <div class="stats-bar-grid">
+      <div class="stat-bar-item">
+        <span class="stat-bar-num">180+</span>
+        <span class="stat-bar-label">Hours Hand Karigari</span>
       </div>
-      <div class="stat-card">
-        <span class="stat-num">40+</span>
-        <span class="stat-label">Precision Measurements</span>
+      <div class="stat-bar-divider"></div>
+      <div class="stat-bar-item">
+        <span class="stat-bar-num">40+</span>
+        <span class="stat-bar-label">Anatomical Measures</span>
       </div>
-      <div class="stat-card">
-        <span class="stat-num">Chennai • Bangalore</span>
-        <span class="stat-label">Private Haute Ateliers</span>
+      <div class="stat-bar-divider"></div>
+      <div class="stat-bar-item">
+        <span class="stat-bar-num">Chennai • Bangalore</span>
+        <span class="stat-bar-label">Private Haute Ateliers</span>
       </div>
-      <div class="stat-card">
-        <span class="stat-num">100%</span>
-        <span class="stat-label">Mulberry Silk & Merino</span>
+      <div class="stat-bar-divider"></div>
+      <div class="stat-bar-item">
+        <span class="stat-bar-num">100%</span>
+        <span class="stat-bar-label">Pure Mulberry Silk</span>
       </div>
     </div>
-  </div>
-
-  <div class="hero-scroll-indicator">
-    <span>DISCOVER THE ATELIER</span>
-    <div class="scroll-line"></div>
   </div>
 </section>
 
