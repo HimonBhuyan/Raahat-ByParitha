@@ -1,6 +1,6 @@
 <header class="luxury-header" id="mainHeader">
   <div class="header-ticker">
-    <div class="container ticker-inner">
+    <div class="ticker-inner">
       <span class="ticker-city"><span class="ticker-prefix">✨ PRIVATE ATELIERS IN </span><span class="ticker-city-names">CHENNAI & BANGALORE</span></span>
       <span class="ticker-divider ticker-desktop-only">•</span>
       <span class="ticker-quote ticker-desktop-only">BESPOKE BRIDAL GROOM CONSULTATIONS BY CREATIVE DIRECTOR PARI AGARWAL</span>
@@ -10,7 +10,7 @@
   </div>
 
   <div class="header-main">
-    <div class="container header-container">
+    <div class="header-container">
       <!-- Mobile Menu Toggle Button -->
       <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation">
         <span class="bar"></span>
